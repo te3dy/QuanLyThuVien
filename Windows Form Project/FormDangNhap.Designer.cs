@@ -70,6 +70,7 @@
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(165, 20);
             this.textBox2.TabIndex = 3;
+            this.textBox2.UseSystemPasswordChar = true;
             // 
             // button1
             // 
@@ -82,6 +83,7 @@
             this.button1.Text = "Đăng Nhập";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // button2
             // 
@@ -89,9 +91,9 @@
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(206, 100);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(124, 38);
+            this.button2.Size = new System.Drawing.Size(127, 38);
             this.button2.TabIndex = 5;
-            this.button2.Text = "Quên Mật Khẩu";
+            this.button2.Text = "Chế Độ Độc Giả";
             this.button2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -111,6 +113,7 @@
             this.Name = "FormDangNhap";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đăng Nhập";
+            this.Load += new System.EventHandler(this.FormDangNhap_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

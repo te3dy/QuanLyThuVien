@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{0A9DD6AB-5E62-461A-A429-B3B8D5B7E0B4}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>BLL</RootNamespace>
     <AssemblyName>BLL</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -31,8 +31,34 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DangNhapBO.cs" />
+    <Compile Include="DocGiaBO.cs" />
+    <Compile Include="NhanVienBO.cs" />
+    <Compile Include="PhieuMuonBO.cs" />
+    <Compile Include="PhieuMuonChiTietBO.cs" />
+    <Compile Include="TaiLieuBO.cs" />
+    <Compile Include="TheLoaiBO.cs" />
+    <Compile Include="ThongKeBO.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{d66185a6-c83b-4214-b094-fbc335854089}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\DTO\DTO.csproj">
+      <Project>{c8aa3857-a871-4f25-bba1-9b7ba5462015}</Project>
+      <Name>DTO</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Data" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

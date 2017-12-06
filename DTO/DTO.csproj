@@ -5,7 +5,7 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{C8AA3857-A871-4F25-BBA1-9B7BA5462015}</ProjectGuid>
-    <OutputType>Exe</OutputType>
+    <OutputType>Library</OutputType>
     <RootNamespace>DTO</RootNamespace>
     <AssemblyName>DTO</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
@@ -31,8 +31,19 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DocGiaDTO.cs" />
+    <Compile Include="NhanVienDTO.cs" />
+    <Compile Include="PhieuMuonChiTietDTO.cs" />
+    <Compile Include="PhieuMuonDTO.cs" />
+    <Compile Include="TaiLieuDTO.cs" />
+    <Compile Include="TheLoaiDTO.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
