@@ -22,6 +22,7 @@ namespace Windows_Form_Project
         private void FormMain_Load(object sender, EventArgs e)
         {
             tabMenu.SelectedTab = null;
+            this.reportThongKe.RefreshReport();
         }
         #endregion
 

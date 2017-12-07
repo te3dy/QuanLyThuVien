@@ -185,6 +185,8 @@
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.txtStatus = new System.Windows.Forms.Label();
+            this.reportThongKe = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.cbThongKe = new System.Windows.Forms.ComboBox();
             this.menuBar.SuspendLayout();
             this.tabPhieuMuon4.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -203,6 +205,7 @@
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDocGia2)).BeginInit();
+            this.tabThongKe5.SuspendLayout();
             this.tabNhanVien6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
@@ -1583,6 +1586,8 @@
             // tabThongKe5
             // 
             this.tabThongKe5.BackColor = System.Drawing.Color.LightBlue;
+            this.tabThongKe5.Controls.Add(this.cbThongKe);
+            this.tabThongKe5.Controls.Add(this.reportThongKe);
             this.tabThongKe5.Location = new System.Drawing.Point(104, 4);
             this.tabThongKe5.Name = "tabThongKe5";
             this.tabThongKe5.Size = new System.Drawing.Size(676, 597);
@@ -1949,6 +1954,22 @@
             this.txtStatus.TabIndex = 68;
             this.txtStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
+            // reportThongKe
+            // 
+            this.reportThongKe.Location = new System.Drawing.Point(6, 41);
+            this.reportThongKe.Name = "reportThongKe";
+            this.reportThongKe.ServerReport.BearerToken = null;
+            this.reportThongKe.Size = new System.Drawing.Size(667, 553);
+            this.reportThongKe.TabIndex = 0;
+            // 
+            // cbThongKe
+            // 
+            this.cbThongKe.FormattingEnabled = true;
+            this.cbThongKe.Location = new System.Drawing.Point(6, 14);
+            this.cbThongKe.Name = "cbThongKe";
+            this.cbThongKe.Size = new System.Drawing.Size(339, 21);
+            this.cbThongKe.TabIndex = 1;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1996,6 +2017,7 @@
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataDocGia2)).EndInit();
+            this.tabThongKe5.ResumeLayout(false);
             this.tabNhanVien6.ResumeLayout(false);
             this.tabNhanVien6.PerformLayout();
             this.panel5.ResumeLayout(false);
@@ -2166,6 +2188,8 @@
         private System.Windows.Forms.ComboBox cbTimNhanVien6;
         private System.Windows.Forms.PictureBox pictureBox5;
         private System.Windows.Forms.TextBox txtTimNhanVien6;
+        private Microsoft.Reporting.WinForms.ReportViewer reportThongKe;
+        private System.Windows.Forms.ComboBox cbThongKe;
     }
 }
 
