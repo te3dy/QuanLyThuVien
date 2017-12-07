@@ -65,6 +65,10 @@
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.thôngTinToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabPhieuMuon4 = new System.Windows.Forms.TabPage();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.txtTimPhieuMuon4 = new System.Windows.Forms.TextBox();
             this.dtNgayTra4 = new System.Windows.Forms.DateTimePicker();
             this.dtNgayMuon4 = new System.Windows.Forms.DateTimePicker();
             this.btnNhapLai4 = new System.Windows.Forms.Button();
@@ -85,6 +89,10 @@
             this.label24 = new System.Windows.Forms.Label();
             this.dataPhieuMuon4 = new System.Windows.Forms.DataGridView();
             this.tabTheLoai3 = new System.Windows.Forms.TabPage();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.cbTimTheLoai3 = new System.Windows.Forms.ComboBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.txtTimTheLoai3 = new System.Windows.Forms.TextBox();
             this.dataTheLoai3 = new System.Windows.Forms.DataGridView();
             this.btnNhapLai3 = new System.Windows.Forms.Button();
             this.btnXoaTheLoai3 = new System.Windows.Forms.Button();
@@ -97,6 +105,10 @@
             this.label20 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.tabTaiLieu1 = new System.Windows.Forms.TabPage();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.cbTimTaiLieu1 = new System.Windows.Forms.ComboBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.txtTimTaiLieu1 = new System.Windows.Forms.TextBox();
             this.dataTaiLieu1 = new System.Windows.Forms.DataGridView();
             this.txtMaTheLoai1 = new System.Windows.Forms.TextBox();
             this.txtSoLuong1 = new System.Windows.Forms.TextBox();
@@ -118,10 +130,13 @@
             this.label14 = new System.Windows.Forms.Label();
             this.tabMenu = new System.Windows.Forms.TabControl();
             this.tabDocGia2 = new System.Windows.Forms.TabPage();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbTimDocGia2 = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtTimDocGia2 = new System.Windows.Forms.TextBox();
             this.rbGioiTinhNu2 = new System.Windows.Forms.RadioButton();
             this.rbGioiTinhNam2 = new System.Windows.Forms.RadioButton();
             this.btnNhapLai2 = new System.Windows.Forms.Button();
-            this.txtTimDocGia2 = new System.Windows.Forms.TextBox();
             this.dtNgayHetHan2 = new System.Windows.Forms.DateTimePicker();
             this.dtNgayCap2 = new System.Windows.Forms.DateTimePicker();
             this.dtNgaySinh2 = new System.Windows.Forms.DateTimePicker();
@@ -141,6 +156,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.tabThongKe5 = new System.Windows.Forms.TabPage();
             this.tabNhanVien6 = new System.Windows.Forms.TabPage();
+            this.panel5 = new System.Windows.Forms.Panel();
+            this.cbTimNhanVien6 = new System.Windows.Forms.ComboBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.txtTimNhanVien6 = new System.Windows.Forms.TextBox();
             this.txtNhapLaiMatKhau6 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.cbQuyen6 = new System.Windows.Forms.ComboBox();
@@ -166,48 +185,29 @@
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.txtStatus = new System.Windows.Forms.Label();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.cbTimDocGia2 = new System.Windows.Forms.ComboBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.cbTimTaiLieu1 = new System.Windows.Forms.ComboBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.txtTimTaiLieu1 = new System.Windows.Forms.TextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cbTimTheLoai3 = new System.Windows.Forms.ComboBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.txtTimTheLoai3 = new System.Windows.Forms.TextBox();
-            this.panel4 = new System.Windows.Forms.Panel();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.pictureBox4 = new System.Windows.Forms.PictureBox();
-            this.txtTimPhieuMuon4 = new System.Windows.Forms.TextBox();
-            this.panel5 = new System.Windows.Forms.Panel();
-            this.cbTimNhanVien6 = new System.Windows.Forms.ComboBox();
-            this.pictureBox5 = new System.Windows.Forms.PictureBox();
-            this.txtTimNhanVien6 = new System.Windows.Forms.TextBox();
             this.menuBar.SuspendLayout();
             this.tabPhieuMuon4.SuspendLayout();
+            this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPhieuMuon4)).BeginInit();
             this.tabTheLoai3.SuspendLayout();
+            this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTheLoai3)).BeginInit();
             this.tabTaiLieu1.SuspendLayout();
+            this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTaiLieu1)).BeginInit();
             this.tabMenu.SuspendLayout();
             this.tabDocGia2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataDocGia2)).BeginInit();
-            this.tabNhanVien6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien5)).BeginInit();
-            this.profile.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            this.panel3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDocGia2)).BeginInit();
+            this.tabNhanVien6.SuspendLayout();
             this.panel5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien5)).BeginInit();
+            this.profile.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuBar
@@ -247,35 +247,35 @@
             // 
             this.xemTàiLiệuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xemTàiLiệuToolStripMenuItem.Image")));
             this.xemTàiLiệuToolStripMenuItem.Name = "xemTàiLiệuToolStripMenuItem";
-            this.xemTàiLiệuToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.xemTàiLiệuToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.xemTàiLiệuToolStripMenuItem.Text = "Xem Danh Sách Tài Liệu";
             // 
             // thêmTàiLiệuToolStripMenuItem
             // 
             this.thêmTàiLiệuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thêmTàiLiệuToolStripMenuItem.Image")));
             this.thêmTàiLiệuToolStripMenuItem.Name = "thêmTàiLiệuToolStripMenuItem";
-            this.thêmTàiLiệuToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.thêmTàiLiệuToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.thêmTàiLiệuToolStripMenuItem.Text = "Thêm Tài Liệu";
             // 
             // sửaTàiLiệuToolStripMenuItem
             // 
             this.sửaTàiLiệuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sửaTàiLiệuToolStripMenuItem.Image")));
             this.sửaTàiLiệuToolStripMenuItem.Name = "sửaTàiLiệuToolStripMenuItem";
-            this.sửaTàiLiệuToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.sửaTàiLiệuToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.sửaTàiLiệuToolStripMenuItem.Text = "Sửa Tài Liệu";
             // 
             // xóaTàiLiệuToolStripMenuItem
             // 
             this.xóaTàiLiệuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xóaTàiLiệuToolStripMenuItem.Image")));
             this.xóaTàiLiệuToolStripMenuItem.Name = "xóaTàiLiệuToolStripMenuItem";
-            this.xóaTàiLiệuToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.xóaTàiLiệuToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.xóaTàiLiệuToolStripMenuItem.Text = "Xóa Tài Liệu";
             // 
             // tìmKiếmTàiLiệuToolStripMenuItem
             // 
             this.tìmKiếmTàiLiệuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tìmKiếmTàiLiệuToolStripMenuItem.Image")));
             this.tìmKiếmTàiLiệuToolStripMenuItem.Name = "tìmKiếmTàiLiệuToolStripMenuItem";
-            this.tìmKiếmTàiLiệuToolStripMenuItem.Size = new System.Drawing.Size(204, 26);
+            this.tìmKiếmTàiLiệuToolStripMenuItem.Size = new System.Drawing.Size(200, 22);
             this.tìmKiếmTàiLiệuToolStripMenuItem.Text = "Tìm Kiếm Tài Liệu";
             // 
             // độcGiảToolStripMenuItem
@@ -295,35 +295,35 @@
             // 
             this.xemĐộcGiảToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xemĐộcGiảToolStripMenuItem.Image")));
             this.xemĐộcGiảToolStripMenuItem.Name = "xemĐộcGiảToolStripMenuItem";
-            this.xemĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.xemĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.xemĐộcGiảToolStripMenuItem.Text = "Xem Danh Sách Độc Giả";
             // 
             // thêmĐộcGiảToolStripMenuItem
             // 
             this.thêmĐộcGiảToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thêmĐộcGiảToolStripMenuItem.Image")));
             this.thêmĐộcGiảToolStripMenuItem.Name = "thêmĐộcGiảToolStripMenuItem";
-            this.thêmĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.thêmĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.thêmĐộcGiảToolStripMenuItem.Text = "Thêm Độc Giả";
             // 
             // sửaĐộcGiảToolStripMenuItem
             // 
             this.sửaĐộcGiảToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sửaĐộcGiảToolStripMenuItem.Image")));
             this.sửaĐộcGiảToolStripMenuItem.Name = "sửaĐộcGiảToolStripMenuItem";
-            this.sửaĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.sửaĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.sửaĐộcGiảToolStripMenuItem.Text = "Sửa Độc Giả";
             // 
             // xóaĐộcGiảToolStripMenuItem
             // 
             this.xóaĐộcGiảToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xóaĐộcGiảToolStripMenuItem.Image")));
             this.xóaĐộcGiảToolStripMenuItem.Name = "xóaĐộcGiảToolStripMenuItem";
-            this.xóaĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.xóaĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.xóaĐộcGiảToolStripMenuItem.Text = "Xóa Độc Giả";
             // 
             // tìmKiếmĐộcGiảToolStripMenuItem
             // 
             this.tìmKiếmĐộcGiảToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tìmKiếmĐộcGiảToolStripMenuItem.Image")));
             this.tìmKiếmĐộcGiảToolStripMenuItem.Name = "tìmKiếmĐộcGiảToolStripMenuItem";
-            this.tìmKiếmĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(205, 26);
+            this.tìmKiếmĐộcGiảToolStripMenuItem.Size = new System.Drawing.Size(201, 22);
             this.tìmKiếmĐộcGiảToolStripMenuItem.Text = "Tìm Kiếm Độc Giả";
             // 
             // thểLoạiToolStripMenuItem
@@ -343,35 +343,35 @@
             // 
             this.xemThểLoạiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xemThểLoạiToolStripMenuItem.Image")));
             this.xemThểLoạiToolStripMenuItem.Name = "xemThểLoạiToolStripMenuItem";
-            this.xemThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.xemThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.xemThểLoạiToolStripMenuItem.Text = "Xem Danh Sách Thể Loại";
             // 
             // thêmThểLoạiToolStripMenuItem
             // 
             this.thêmThểLoạiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thêmThểLoạiToolStripMenuItem.Image")));
             this.thêmThểLoạiToolStripMenuItem.Name = "thêmThểLoạiToolStripMenuItem";
-            this.thêmThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.thêmThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.thêmThểLoạiToolStripMenuItem.Text = "Thêm Thể Loại";
             // 
             // sửaThểLoạiToolStripMenuItem
             // 
             this.sửaThểLoạiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sửaThểLoạiToolStripMenuItem.Image")));
             this.sửaThểLoạiToolStripMenuItem.Name = "sửaThểLoạiToolStripMenuItem";
-            this.sửaThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.sửaThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.sửaThểLoạiToolStripMenuItem.Text = "Sửa Thể Loại";
             // 
             // xóaThểLoạiToolStripMenuItem
             // 
             this.xóaThểLoạiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xóaThểLoạiToolStripMenuItem.Image")));
             this.xóaThểLoạiToolStripMenuItem.Name = "xóaThểLoạiToolStripMenuItem";
-            this.xóaThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.xóaThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.xóaThểLoạiToolStripMenuItem.Text = "Xóa Thể Loại";
             // 
             // tìmKiếmThểLoạiToolStripMenuItem
             // 
             this.tìmKiếmThểLoạiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tìmKiếmThểLoạiToolStripMenuItem.Image")));
             this.tìmKiếmThểLoạiToolStripMenuItem.Name = "tìmKiếmThểLoạiToolStripMenuItem";
-            this.tìmKiếmThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(209, 26);
+            this.tìmKiếmThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(205, 22);
             this.tìmKiếmThểLoạiToolStripMenuItem.Text = "Tìm Kiếm Thể Loại";
             // 
             // mượnTrảToolStripMenuItem
@@ -391,35 +391,35 @@
             // 
             this.xemPhiếuMượnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xemPhiếuMượnToolStripMenuItem.Image")));
             this.xemPhiếuMượnToolStripMenuItem.Name = "xemPhiếuMượnToolStripMenuItem";
-            this.xemPhiếuMượnToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.xemPhiếuMượnToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.xemPhiếuMượnToolStripMenuItem.Text = "Xem Danh Sách Mượn Trả";
             // 
             // thêmPhiếuMượnToolStripMenuItem
             // 
             this.thêmPhiếuMượnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thêmPhiếuMượnToolStripMenuItem.Image")));
             this.thêmPhiếuMượnToolStripMenuItem.Name = "thêmPhiếuMượnToolStripMenuItem";
-            this.thêmPhiếuMượnToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.thêmPhiếuMượnToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.thêmPhiếuMượnToolStripMenuItem.Text = "Thêm Phiếu Mượn";
             // 
             // xóaPhiếuMượnToolStripMenuItem
             // 
             this.xóaPhiếuMượnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("xóaPhiếuMượnToolStripMenuItem.Image")));
             this.xóaPhiếuMượnToolStripMenuItem.Name = "xóaPhiếuMượnToolStripMenuItem";
-            this.xóaPhiếuMượnToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.xóaPhiếuMượnToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.xóaPhiếuMượnToolStripMenuItem.Text = "Xóa Phiếu Mượn";
             // 
             // sửaPhiếuMượnToolStripMenuItem
             // 
             this.sửaPhiếuMượnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sửaPhiếuMượnToolStripMenuItem.Image")));
             this.sửaPhiếuMượnToolStripMenuItem.Name = "sửaPhiếuMượnToolStripMenuItem";
-            this.sửaPhiếuMượnToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.sửaPhiếuMượnToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.sửaPhiếuMượnToolStripMenuItem.Text = "Sửa Phiếu Mượn";
             // 
             // tìmKiếmPhiếuMượnToolStripMenuItem
             // 
             this.tìmKiếmPhiếuMượnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tìmKiếmPhiếuMượnToolStripMenuItem.Image")));
             this.tìmKiếmPhiếuMượnToolStripMenuItem.Name = "tìmKiếmPhiếuMượnToolStripMenuItem";
-            this.tìmKiếmPhiếuMượnToolStripMenuItem.Size = new System.Drawing.Size(215, 26);
+            this.tìmKiếmPhiếuMượnToolStripMenuItem.Size = new System.Drawing.Size(211, 22);
             this.tìmKiếmPhiếuMượnToolStripMenuItem.Text = "Tìm Kiếm Phiếu Mượn";
             // 
             // thốngKêToolStripMenuItem
@@ -438,28 +438,28 @@
             // 
             this.tàiLiệuMượnQuáHạnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tàiLiệuMượnQuáHạnToolStripMenuItem.Image")));
             this.tàiLiệuMượnQuáHạnToolStripMenuItem.Name = "tàiLiệuMượnQuáHạnToolStripMenuItem";
-            this.tàiLiệuMượnQuáHạnToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.tàiLiệuMượnQuáHạnToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.tàiLiệuMượnQuáHạnToolStripMenuItem.Text = "Tài Liệu Mượn Quá Hạn";
             // 
             // tàiLiệuHiệnChoMượnToolStripMenuItem
             // 
             this.tàiLiệuHiệnChoMượnToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("tàiLiệuHiệnChoMượnToolStripMenuItem.Image")));
             this.tàiLiệuHiệnChoMượnToolStripMenuItem.Name = "tàiLiệuHiệnChoMượnToolStripMenuItem";
-            this.tàiLiệuHiệnChoMượnToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.tàiLiệuHiệnChoMượnToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.tàiLiệuHiệnChoMượnToolStripMenuItem.Text = "Tài Liệu Hiện Cho Mượn";
             // 
             // top10TàiLiệuMượnNhiềuNhấtToolStripMenuItem
             // 
             this.top10TàiLiệuMượnNhiềuNhấtToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("top10TàiLiệuMượnNhiềuNhấtToolStripMenuItem.Image")));
             this.top10TàiLiệuMượnNhiềuNhấtToolStripMenuItem.Name = "top10TàiLiệuMượnNhiềuNhấtToolStripMenuItem";
-            this.top10TàiLiệuMượnNhiềuNhấtToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.top10TàiLiệuMượnNhiềuNhấtToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.top10TàiLiệuMượnNhiềuNhấtToolStripMenuItem.Text = "Top 10 Tài Liệu Mượn Nhiều Nhất";
             // 
             // sốLầnMượnTheoThểLoạiToolStripMenuItem
             // 
             this.sốLầnMượnTheoThểLoạiToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("sốLầnMượnTheoThểLoạiToolStripMenuItem.Image")));
             this.sốLầnMượnTheoThểLoạiToolStripMenuItem.Name = "sốLầnMượnTheoThểLoạiToolStripMenuItem";
-            this.sốLầnMượnTheoThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(255, 26);
+            this.sốLầnMượnTheoThểLoạiToolStripMenuItem.Size = new System.Drawing.Size(251, 22);
             this.sốLầnMượnTheoThểLoạiToolStripMenuItem.Text = "Số Lần Mượn Theo Thể Loại";
             // 
             // càiĐặtToolStripMenuItem
@@ -477,19 +477,19 @@
             // 
             this.quảnLýNhânViênToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("quảnLýNhânViênToolStripMenuItem.Image")));
             this.quảnLýNhânViênToolStripMenuItem.Name = "quảnLýNhânViênToolStripMenuItem";
-            this.quảnLýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.quảnLýNhânViênToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.quảnLýNhânViênToolStripMenuItem.Text = "Quản Lý Nhân Viên";
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(176, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(172, 6);
             // 
             // thôngTinToolStripMenuItem
             // 
             this.thôngTinToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("thôngTinToolStripMenuItem.Image")));
             this.thôngTinToolStripMenuItem.Name = "thôngTinToolStripMenuItem";
-            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(179, 26);
+            this.thôngTinToolStripMenuItem.Size = new System.Drawing.Size(175, 22);
             this.thôngTinToolStripMenuItem.Text = "Thông Tin Nhóm";
             // 
             // tabPhieuMuon4
@@ -523,6 +523,53 @@
             this.tabPhieuMuon4.TabIndex = 3;
             this.tabPhieuMuon4.Text = "Phiếu Mượn";
             this.tabPhieuMuon4.ToolTipText = "Quản Lý Mượn Trả";
+            // 
+            // panel4
+            // 
+            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel4.BackColor = System.Drawing.Color.White;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel4.Controls.Add(this.comboBox4);
+            this.panel4.Controls.Add(this.pictureBox4);
+            this.panel4.Controls.Add(this.txtTimPhieuMuon4);
+            this.panel4.Location = new System.Drawing.Point(200, 249);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(309, 22);
+            this.panel4.TabIndex = 81;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.comboBox4.Location = new System.Drawing.Point(168, -1);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(139, 21);
+            this.comboBox4.TabIndex = 14;
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.White;
+            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
+            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(26, 20);
+            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox4.TabIndex = 56;
+            this.pictureBox4.TabStop = false;
+            // 
+            // txtTimPhieuMuon4
+            // 
+            this.txtTimPhieuMuon4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTimPhieuMuon4.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTimPhieuMuon4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimPhieuMuon4.Location = new System.Drawing.Point(32, 3);
+            this.txtTimPhieuMuon4.Name = "txtTimPhieuMuon4";
+            this.txtTimPhieuMuon4.Size = new System.Drawing.Size(130, 13);
+            this.txtTimPhieuMuon4.TabIndex = 13;
             // 
             // dtNgayTra4
             // 
@@ -752,6 +799,53 @@
             this.tabTheLoai3.Text = "Thể Loại";
             this.tabTheLoai3.ToolTipText = "Thể Loại";
             // 
+            // panel3
+            // 
+            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.cbTimTheLoai3);
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.txtTimTheLoai3);
+            this.panel3.Location = new System.Drawing.Point(200, 249);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(309, 22);
+            this.panel3.TabIndex = 78;
+            // 
+            // cbTimTheLoai3
+            // 
+            this.cbTimTheLoai3.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbTimTheLoai3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTimTheLoai3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTimTheLoai3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTimTheLoai3.FormattingEnabled = true;
+            this.cbTimTheLoai3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cbTimTheLoai3.Location = new System.Drawing.Point(168, -1);
+            this.cbTimTheLoai3.Name = "cbTimTheLoai3";
+            this.cbTimTheLoai3.Size = new System.Drawing.Size(139, 21);
+            this.cbTimTheLoai3.TabIndex = 9;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.BackColor = System.Drawing.Color.White;
+            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
+            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(26, 20);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 56;
+            this.pictureBox3.TabStop = false;
+            // 
+            // txtTimTheLoai3
+            // 
+            this.txtTimTheLoai3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTimTheLoai3.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTimTheLoai3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimTheLoai3.Location = new System.Drawing.Point(32, 3);
+            this.txtTimTheLoai3.Name = "txtTimTheLoai3";
+            this.txtTimTheLoai3.Size = new System.Drawing.Size(130, 13);
+            this.txtTimTheLoai3.TabIndex = 8;
+            // 
             // dataTheLoai3
             // 
             this.dataTheLoai3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -911,14 +1005,64 @@
             this.tabTaiLieu1.Text = "Tài Liệu";
             this.tabTaiLieu1.ToolTipText = "Quản Lý Tài Liệu";
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel2.BackColor = System.Drawing.Color.White;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.cbTimTaiLieu1);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.txtTimTaiLieu1);
+            this.panel2.Location = new System.Drawing.Point(200, 249);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(309, 22);
+            this.panel2.TabIndex = 68;
+            // 
+            // cbTimTaiLieu1
+            // 
+            this.cbTimTaiLieu1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbTimTaiLieu1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTimTaiLieu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTimTaiLieu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTimTaiLieu1.FormattingEnabled = true;
+            this.cbTimTaiLieu1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cbTimTaiLieu1.Location = new System.Drawing.Point(168, -1);
+            this.cbTimTaiLieu1.Name = "cbTimTaiLieu1";
+            this.cbTimTaiLieu1.Size = new System.Drawing.Size(139, 21);
+            this.cbTimTaiLieu1.TabIndex = 13;
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackColor = System.Drawing.Color.White;
+            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
+            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(26, 20);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 56;
+            this.pictureBox2.TabStop = false;
+            // 
+            // txtTimTaiLieu1
+            // 
+            this.txtTimTaiLieu1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTimTaiLieu1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTimTaiLieu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimTaiLieu1.Location = new System.Drawing.Point(32, 3);
+            this.txtTimTaiLieu1.Name = "txtTimTaiLieu1";
+            this.txtTimTaiLieu1.Size = new System.Drawing.Size(130, 13);
+            this.txtTimTaiLieu1.TabIndex = 12;
+            // 
             // dataTaiLieu1
             // 
+            this.dataTaiLieu1.AllowUserToAddRows = false;
+            this.dataTaiLieu1.AllowUserToDeleteRows = false;
             this.dataTaiLieu1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataTaiLieu1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataTaiLieu1.Location = new System.Drawing.Point(6, 277);
             this.dataTaiLieu1.Name = "dataTaiLieu1";
+            this.dataTaiLieu1.ReadOnly = true;
             this.dataTaiLieu1.Size = new System.Drawing.Size(664, 314);
             this.dataTaiLieu1.TabIndex = 67;
             // 
@@ -1170,6 +1314,56 @@
             this.tabDocGia2.Text = "Độc Giả";
             this.tabDocGia2.ToolTipText = "Quản Lý Độc Giả";
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel1.BackColor = System.Drawing.Color.White;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.cbTimDocGia2);
+            this.panel1.Controls.Add(this.pictureBox1);
+            this.panel1.Controls.Add(this.txtTimDocGia2);
+            this.panel1.Location = new System.Drawing.Point(200, 249);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(309, 22);
+            this.panel1.TabIndex = 55;
+            // 
+            // cbTimDocGia2
+            // 
+            this.cbTimDocGia2.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbTimDocGia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTimDocGia2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTimDocGia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTimDocGia2.FormattingEnabled = true;
+            this.cbTimDocGia2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cbTimDocGia2.Items.AddRange(new object[] {
+            "Mã Độc Giả",
+            "Tên Độc Giả"});
+            this.cbTimDocGia2.Location = new System.Drawing.Point(168, -1);
+            this.cbTimDocGia2.Name = "cbTimDocGia2";
+            this.cbTimDocGia2.Size = new System.Drawing.Size(139, 21);
+            this.cbTimDocGia2.TabIndex = 14;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.White;
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(26, 20);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 56;
+            this.pictureBox1.TabStop = false;
+            // 
+            // txtTimDocGia2
+            // 
+            this.txtTimDocGia2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTimDocGia2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTimDocGia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimDocGia2.Location = new System.Drawing.Point(32, 3);
+            this.txtTimDocGia2.Name = "txtTimDocGia2";
+            this.txtTimDocGia2.Size = new System.Drawing.Size(130, 13);
+            this.txtTimDocGia2.TabIndex = 13;
+            // 
             // rbGioiTinhNu2
             // 
             this.rbGioiTinhNu2.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1206,16 +1400,6 @@
             this.btnNhapLai2.Text = "Nhập Lại";
             this.btnNhapLai2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnNhapLai2.UseVisualStyleBackColor = true;
-            // 
-            // txtTimDocGia2
-            // 
-            this.txtTimDocGia2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTimDocGia2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimDocGia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimDocGia2.Location = new System.Drawing.Point(32, 3);
-            this.txtTimDocGia2.Name = "txtTimDocGia2";
-            this.txtTimDocGia2.Size = new System.Drawing.Size(130, 13);
-            this.txtTimDocGia2.TabIndex = 13;
             // 
             // dtNgayHetHan2
             // 
@@ -1436,6 +1620,53 @@
             this.tabNhanVien6.TabIndex = 4;
             this.tabNhanVien6.Text = "Nhân Viên";
             this.tabNhanVien6.ToolTipText = "Cài Đặt";
+            // 
+            // panel5
+            // 
+            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.panel5.BackColor = System.Drawing.Color.White;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel5.Controls.Add(this.cbTimNhanVien6);
+            this.panel5.Controls.Add(this.pictureBox5);
+            this.panel5.Controls.Add(this.txtTimNhanVien6);
+            this.panel5.Location = new System.Drawing.Point(200, 249);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(309, 22);
+            this.panel5.TabIndex = 105;
+            // 
+            // cbTimNhanVien6
+            // 
+            this.cbTimNhanVien6.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.cbTimNhanVien6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTimNhanVien6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTimNhanVien6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTimNhanVien6.FormattingEnabled = true;
+            this.cbTimNhanVien6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
+            this.cbTimNhanVien6.Location = new System.Drawing.Point(168, -1);
+            this.cbTimNhanVien6.Name = "cbTimNhanVien6";
+            this.cbTimNhanVien6.Size = new System.Drawing.Size(139, 21);
+            this.cbTimNhanVien6.TabIndex = 13;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.White;
+            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
+            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(26, 20);
+            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox5.TabIndex = 56;
+            this.pictureBox5.TabStop = false;
+            // 
+            // txtTimNhanVien6
+            // 
+            this.txtTimNhanVien6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtTimNhanVien6.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtTimNhanVien6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimNhanVien6.Location = new System.Drawing.Point(32, 3);
+            this.txtTimNhanVien6.Name = "txtTimNhanVien6";
+            this.txtTimNhanVien6.Size = new System.Drawing.Size(130, 13);
+            this.txtTimNhanVien6.TabIndex = 12;
             // 
             // txtNhapLaiMatKhau6
             // 
@@ -1694,14 +1925,14 @@
             // 
             this.đổiMậtKhẩuToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("đổiMậtKhẩuToolStripMenuItem.Image")));
             this.đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
-            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(156, 26);
+            this.đổiMậtKhẩuToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật Khẩu";
             // 
             // đăngXuấtToolStripMenuItem1
             // 
             this.đăngXuấtToolStripMenuItem1.Image = ((System.Drawing.Image)(resources.GetObject("đăngXuấtToolStripMenuItem1.Image")));
             this.đăngXuấtToolStripMenuItem1.Name = "đăngXuấtToolStripMenuItem1";
-            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(156, 26);
+            this.đăngXuấtToolStripMenuItem1.Size = new System.Drawing.Size(146, 22);
             this.đăngXuấtToolStripMenuItem1.Text = "Đăng Xuất";
             // 
             // txtStatus
@@ -1717,234 +1948,6 @@
             this.txtStatus.Size = new System.Drawing.Size(0, 16);
             this.txtStatus.TabIndex = 68;
             this.txtStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            // 
-            // panel1
-            // 
-            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel1.BackColor = System.Drawing.Color.White;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.cbTimDocGia2);
-            this.panel1.Controls.Add(this.pictureBox1);
-            this.panel1.Controls.Add(this.txtTimDocGia2);
-            this.panel1.Location = new System.Drawing.Point(200, 249);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(309, 22);
-            this.panel1.TabIndex = 55;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.White;
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(26, 20);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 56;
-            this.pictureBox1.TabStop = false;
-            // 
-            // cbTimDocGia2
-            // 
-            this.cbTimDocGia2.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cbTimDocGia2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTimDocGia2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTimDocGia2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTimDocGia2.FormattingEnabled = true;
-            this.cbTimDocGia2.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cbTimDocGia2.Items.AddRange(new object[] {
-            "Mã Độc Giả",
-            "Tên Độc Giả"});
-            this.cbTimDocGia2.Location = new System.Drawing.Point(168, -1);
-            this.cbTimDocGia2.Name = "cbTimDocGia2";
-            this.cbTimDocGia2.Size = new System.Drawing.Size(139, 21);
-            this.cbTimDocGia2.TabIndex = 14;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.cbTimTaiLieu1);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.txtTimTaiLieu1);
-            this.panel2.Location = new System.Drawing.Point(200, 249);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(309, 22);
-            this.panel2.TabIndex = 68;
-            // 
-            // cbTimTaiLieu1
-            // 
-            this.cbTimTaiLieu1.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cbTimTaiLieu1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTimTaiLieu1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTimTaiLieu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTimTaiLieu1.FormattingEnabled = true;
-            this.cbTimTaiLieu1.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cbTimTaiLieu1.Location = new System.Drawing.Point(168, -1);
-            this.cbTimTaiLieu1.Name = "cbTimTaiLieu1";
-            this.cbTimTaiLieu1.Size = new System.Drawing.Size(139, 21);
-            this.cbTimTaiLieu1.TabIndex = 13;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.BackColor = System.Drawing.Color.White;
-            this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(26, 20);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 56;
-            this.pictureBox2.TabStop = false;
-            // 
-            // txtTimTaiLieu1
-            // 
-            this.txtTimTaiLieu1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTimTaiLieu1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimTaiLieu1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimTaiLieu1.Location = new System.Drawing.Point(32, 3);
-            this.txtTimTaiLieu1.Name = "txtTimTaiLieu1";
-            this.txtTimTaiLieu1.Size = new System.Drawing.Size(130, 13);
-            this.txtTimTaiLieu1.TabIndex = 12;
-            // 
-            // panel3
-            // 
-            this.panel3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel3.BackColor = System.Drawing.Color.White;
-            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel3.Controls.Add(this.cbTimTheLoai3);
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.txtTimTheLoai3);
-            this.panel3.Location = new System.Drawing.Point(200, 249);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(309, 22);
-            this.panel3.TabIndex = 78;
-            // 
-            // cbTimTheLoai3
-            // 
-            this.cbTimTheLoai3.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cbTimTheLoai3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTimTheLoai3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTimTheLoai3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTimTheLoai3.FormattingEnabled = true;
-            this.cbTimTheLoai3.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cbTimTheLoai3.Location = new System.Drawing.Point(168, -1);
-            this.cbTimTheLoai3.Name = "cbTimTheLoai3";
-            this.cbTimTheLoai3.Size = new System.Drawing.Size(139, 21);
-            this.cbTimTheLoai3.TabIndex = 9;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.BackColor = System.Drawing.Color.White;
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(26, 20);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 56;
-            this.pictureBox3.TabStop = false;
-            // 
-            // txtTimTheLoai3
-            // 
-            this.txtTimTheLoai3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTimTheLoai3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimTheLoai3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimTheLoai3.Location = new System.Drawing.Point(32, 3);
-            this.txtTimTheLoai3.Name = "txtTimTheLoai3";
-            this.txtTimTheLoai3.Size = new System.Drawing.Size(130, 13);
-            this.txtTimTheLoai3.TabIndex = 8;
-            // 
-            // panel4
-            // 
-            this.panel4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel4.BackColor = System.Drawing.Color.White;
-            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel4.Controls.Add(this.comboBox4);
-            this.panel4.Controls.Add(this.pictureBox4);
-            this.panel4.Controls.Add(this.txtTimPhieuMuon4);
-            this.panel4.Location = new System.Drawing.Point(200, 249);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(309, 22);
-            this.panel4.TabIndex = 81;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.comboBox4.Location = new System.Drawing.Point(168, -1);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(139, 21);
-            this.comboBox4.TabIndex = 14;
-            // 
-            // pictureBox4
-            // 
-            this.pictureBox4.BackColor = System.Drawing.Color.White;
-            this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox4.Name = "pictureBox4";
-            this.pictureBox4.Size = new System.Drawing.Size(26, 20);
-            this.pictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox4.TabIndex = 56;
-            this.pictureBox4.TabStop = false;
-            // 
-            // txtTimPhieuMuon4
-            // 
-            this.txtTimPhieuMuon4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTimPhieuMuon4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimPhieuMuon4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimPhieuMuon4.Location = new System.Drawing.Point(32, 3);
-            this.txtTimPhieuMuon4.Name = "txtTimPhieuMuon4";
-            this.txtTimPhieuMuon4.Size = new System.Drawing.Size(130, 13);
-            this.txtTimPhieuMuon4.TabIndex = 13;
-            // 
-            // panel5
-            // 
-            this.panel5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.panel5.BackColor = System.Drawing.Color.White;
-            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel5.Controls.Add(this.cbTimNhanVien6);
-            this.panel5.Controls.Add(this.pictureBox5);
-            this.panel5.Controls.Add(this.txtTimNhanVien6);
-            this.panel5.Location = new System.Drawing.Point(200, 249);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(309, 22);
-            this.panel5.TabIndex = 105;
-            // 
-            // cbTimNhanVien6
-            // 
-            this.cbTimNhanVien6.BackColor = System.Drawing.SystemColors.ScrollBar;
-            this.cbTimNhanVien6.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTimNhanVien6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTimNhanVien6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTimNhanVien6.FormattingEnabled = true;
-            this.cbTimNhanVien6.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.cbTimNhanVien6.Location = new System.Drawing.Point(168, -1);
-            this.cbTimNhanVien6.Name = "cbTimNhanVien6";
-            this.cbTimNhanVien6.Size = new System.Drawing.Size(139, 21);
-            this.cbTimNhanVien6.TabIndex = 13;
-            // 
-            // pictureBox5
-            // 
-            this.pictureBox5.BackColor = System.Drawing.Color.White;
-            this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(0, 0);
-            this.pictureBox5.Name = "pictureBox5";
-            this.pictureBox5.Size = new System.Drawing.Size(26, 20);
-            this.pictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox5.TabIndex = 56;
-            this.pictureBox5.TabStop = false;
-            // 
-            // txtTimNhanVien6
-            // 
-            this.txtTimNhanVien6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtTimNhanVien6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtTimNhanVien6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimNhanVien6.Location = new System.Drawing.Point(32, 3);
-            this.txtTimNhanVien6.Name = "txtTimNhanVien6";
-            this.txtTimNhanVien6.Size = new System.Drawing.Size(130, 13);
-            this.txtTimNhanVien6.TabIndex = 12;
             // 
             // FormMain
             // 
@@ -1970,37 +1973,37 @@
             this.menuBar.PerformLayout();
             this.tabPhieuMuon4.ResumeLayout(false);
             this.tabPhieuMuon4.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataPhieuMuon4)).EndInit();
             this.tabTheLoai3.ResumeLayout(false);
             this.tabTheLoai3.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTheLoai3)).EndInit();
             this.tabTaiLieu1.ResumeLayout(false);
             this.tabTaiLieu1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataTaiLieu1)).EndInit();
             this.tabMenu.ResumeLayout(false);
             this.tabDocGia2.ResumeLayout(false);
             this.tabDocGia2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataDocGia2)).EndInit();
-            this.tabNhanVien6.ResumeLayout(false);
-            this.tabNhanVien6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien5)).EndInit();
-            this.profile.ResumeLayout(false);
-            this.profile.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            this.panel3.ResumeLayout(false);
-            this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            this.panel4.ResumeLayout(false);
-            this.panel4.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataDocGia2)).EndInit();
+            this.tabNhanVien6.ResumeLayout(false);
+            this.tabNhanVien6.PerformLayout();
             this.panel5.ResumeLayout(false);
             this.panel5.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataNhanVien5)).EndInit();
+            this.profile.ResumeLayout(false);
+            this.profile.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 

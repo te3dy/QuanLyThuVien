@@ -1,6 +1,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -20,34 +21,23 @@ namespace DAL{
         /**
          * 
          */
-        private String connectionString;
+        private String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
 
         /**
          * 
          */
         public SqlConnection connection;
 
-
-
-
-
-
-
-
-
-
-        /**
-         * 
-         */
         public void Open() {
-            // TODO implement here
+            connection = new SqlConnection(connectionString);
+            connection.Open();
         }
 
         /**
          * 
          */
         public void Close() {
-            // TODO implement here
+            connection.Close();
         }
 
     }
