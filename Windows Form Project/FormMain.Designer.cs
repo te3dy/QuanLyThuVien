@@ -145,7 +145,6 @@
             this.btnSuaDocGia2 = new System.Windows.Forms.Button();
             this.btnLuuDocGia2 = new System.Windows.Forms.Button();
             this.txtHoTen2 = new System.Windows.Forms.TextBox();
-            this.txtDoiTuong2 = new System.Windows.Forms.TextBox();
             this.txtMaDocGia2 = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -155,6 +154,8 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabThongKe5 = new System.Windows.Forms.TabPage();
+            this.cbThongKe = new System.Windows.Forms.ComboBox();
+            this.reportThongKe = new Microsoft.Reporting.WinForms.ReportViewer();
             this.tabNhanVien6 = new System.Windows.Forms.TabPage();
             this.panel5 = new System.Windows.Forms.Panel();
             this.cbTimNhanVien6 = new System.Windows.Forms.ComboBox();
@@ -185,8 +186,7 @@
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.txtStatus = new System.Windows.Forms.Label();
-            this.reportThongKe = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.cbThongKe = new System.Windows.Forms.ComboBox();
+            this.cbDoiTuong2 = new System.Windows.Forms.ComboBox();
             this.menuBar.SuspendLayout();
             this.tabPhieuMuon4.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -577,7 +577,8 @@
             // dtNgayTra4
             // 
             this.dtNgayTra4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtNgayTra4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayTra4.CustomFormat = "MM/dd/yyyy";
+            this.dtNgayTra4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayTra4.Location = new System.Drawing.Point(140, 189);
             this.dtNgayTra4.Name = "dtNgayTra4";
             this.dtNgayTra4.Size = new System.Drawing.Size(95, 20);
@@ -586,7 +587,8 @@
             // dtNgayMuon4
             // 
             this.dtNgayMuon4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtNgayMuon4.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayMuon4.CustomFormat = "MM/dd/yyyy";
+            this.dtNgayMuon4.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayMuon4.Location = new System.Drawing.Point(140, 163);
             this.dtNgayMuon4.Name = "dtNgayMuon4";
             this.dtNgayMuon4.Size = new System.Drawing.Size(95, 20);
@@ -768,12 +770,15 @@
             // 
             // dataPhieuMuon4
             // 
+            this.dataPhieuMuon4.AllowUserToAddRows = false;
+            this.dataPhieuMuon4.AllowUserToDeleteRows = false;
             this.dataPhieuMuon4.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataPhieuMuon4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataPhieuMuon4.Location = new System.Drawing.Point(6, 277);
             this.dataPhieuMuon4.Name = "dataPhieuMuon4";
+            this.dataPhieuMuon4.ReadOnly = true;
             this.dataPhieuMuon4.Size = new System.Drawing.Size(664, 314);
             this.dataPhieuMuon4.TabIndex = 53;
             // 
@@ -851,12 +856,15 @@
             // 
             // dataTheLoai3
             // 
+            this.dataTheLoai3.AllowUserToAddRows = false;
+            this.dataTheLoai3.AllowUserToDeleteRows = false;
             this.dataTheLoai3.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataTheLoai3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataTheLoai3.Location = new System.Drawing.Point(6, 277);
             this.dataTheLoai3.Name = "dataTheLoai3";
+            this.dataTheLoai3.ReadOnly = true;
             this.dataTheLoai3.Size = new System.Drawing.Size(664, 314);
             this.dataTheLoai3.TabIndex = 77;
             // 
@@ -1287,6 +1295,7 @@
             // tabDocGia2
             // 
             this.tabDocGia2.BackColor = System.Drawing.Color.LightBlue;
+            this.tabDocGia2.Controls.Add(this.cbDoiTuong2);
             this.tabDocGia2.Controls.Add(this.panel1);
             this.tabDocGia2.Controls.Add(this.rbGioiTinhNu2);
             this.tabDocGia2.Controls.Add(this.rbGioiTinhNam2);
@@ -1299,7 +1308,6 @@
             this.tabDocGia2.Controls.Add(this.btnSuaDocGia2);
             this.tabDocGia2.Controls.Add(this.btnLuuDocGia2);
             this.tabDocGia2.Controls.Add(this.txtHoTen2);
-            this.tabDocGia2.Controls.Add(this.txtDoiTuong2);
             this.tabDocGia2.Controls.Add(this.txtMaDocGia2);
             this.tabDocGia2.Controls.Add(this.label7);
             this.tabDocGia2.Controls.Add(this.label6);
@@ -1407,7 +1415,8 @@
             // dtNgayHetHan2
             // 
             this.dtNgayHetHan2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtNgayHetHan2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayHetHan2.CustomFormat = "MM/dd/yyyy";
+            this.dtNgayHetHan2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayHetHan2.Location = new System.Drawing.Point(140, 187);
             this.dtNgayHetHan2.Name = "dtNgayHetHan2";
             this.dtNgayHetHan2.Size = new System.Drawing.Size(100, 20);
@@ -1416,7 +1425,8 @@
             // dtNgayCap2
             // 
             this.dtNgayCap2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtNgayCap2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgayCap2.CustomFormat = "MM/dd/yyyy";
+            this.dtNgayCap2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgayCap2.Location = new System.Drawing.Point(140, 161);
             this.dtNgayCap2.Name = "dtNgayCap2";
             this.dtNgayCap2.Size = new System.Drawing.Size(100, 20);
@@ -1425,7 +1435,8 @@
             // dtNgaySinh2
             // 
             this.dtNgaySinh2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtNgaySinh2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtNgaySinh2.CustomFormat = "MM/dd/yyyy";
+            this.dtNgaySinh2.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtNgaySinh2.Location = new System.Drawing.Point(140, 109);
             this.dtNgaySinh2.Name = "dtNgaySinh2";
             this.dtNgaySinh2.Size = new System.Drawing.Size(100, 20);
@@ -1433,12 +1444,15 @@
             // 
             // dataDocGia2
             // 
+            this.dataDocGia2.AllowUserToAddRows = false;
+            this.dataDocGia2.AllowUserToDeleteRows = false;
             this.dataDocGia2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataDocGia2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataDocGia2.Location = new System.Drawing.Point(6, 277);
             this.dataDocGia2.Name = "dataDocGia2";
+            this.dataDocGia2.ReadOnly = true;
             this.dataDocGia2.Size = new System.Drawing.Size(664, 314);
             this.dataDocGia2.TabIndex = 52;
             // 
@@ -1489,14 +1503,6 @@
             this.txtHoTen2.Name = "txtHoTen2";
             this.txtHoTen2.Size = new System.Drawing.Size(172, 20);
             this.txtHoTen2.TabIndex = 2;
-            // 
-            // txtDoiTuong2
-            // 
-            this.txtDoiTuong2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtDoiTuong2.Location = new System.Drawing.Point(140, 135);
-            this.txtDoiTuong2.Name = "txtDoiTuong2";
-            this.txtDoiTuong2.Size = new System.Drawing.Size(172, 20);
-            this.txtDoiTuong2.TabIndex = 6;
             // 
             // txtMaDocGia2
             // 
@@ -1593,6 +1599,22 @@
             this.tabThongKe5.Size = new System.Drawing.Size(676, 597);
             this.tabThongKe5.TabIndex = 5;
             this.tabThongKe5.Text = "Thống Kê";
+            // 
+            // cbThongKe
+            // 
+            this.cbThongKe.FormattingEnabled = true;
+            this.cbThongKe.Location = new System.Drawing.Point(6, 14);
+            this.cbThongKe.Name = "cbThongKe";
+            this.cbThongKe.Size = new System.Drawing.Size(339, 21);
+            this.cbThongKe.TabIndex = 1;
+            // 
+            // reportThongKe
+            // 
+            this.reportThongKe.Location = new System.Drawing.Point(6, 41);
+            this.reportThongKe.Name = "reportThongKe";
+            this.reportThongKe.ServerReport.BearerToken = null;
+            this.reportThongKe.Size = new System.Drawing.Size(667, 553);
+            this.reportThongKe.TabIndex = 0;
             // 
             // tabNhanVien6
             // 
@@ -1878,12 +1900,15 @@
             // 
             // dataNhanVien5
             // 
+            this.dataNhanVien5.AllowUserToAddRows = false;
+            this.dataNhanVien5.AllowUserToDeleteRows = false;
             this.dataNhanVien5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataNhanVien5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataNhanVien5.Location = new System.Drawing.Point(6, 277);
             this.dataNhanVien5.Name = "dataNhanVien5";
+            this.dataNhanVien5.ReadOnly = true;
             this.dataNhanVien5.Size = new System.Drawing.Size(664, 314);
             this.dataNhanVien5.TabIndex = 53;
             // 
@@ -1954,21 +1979,17 @@
             this.txtStatus.TabIndex = 68;
             this.txtStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // reportThongKe
+            // cbDoiTuong2
             // 
-            this.reportThongKe.Location = new System.Drawing.Point(6, 41);
-            this.reportThongKe.Name = "reportThongKe";
-            this.reportThongKe.ServerReport.BearerToken = null;
-            this.reportThongKe.Size = new System.Drawing.Size(667, 553);
-            this.reportThongKe.TabIndex = 0;
-            // 
-            // cbThongKe
-            // 
-            this.cbThongKe.FormattingEnabled = true;
-            this.cbThongKe.Location = new System.Drawing.Point(6, 14);
-            this.cbThongKe.Name = "cbThongKe";
-            this.cbThongKe.Size = new System.Drawing.Size(339, 21);
-            this.cbThongKe.TabIndex = 1;
+            this.cbDoiTuong2.FormattingEnabled = true;
+            this.cbDoiTuong2.Items.AddRange(new object[] {
+            "Học Sinh",
+            "Sinh Viên",
+            "Giáo Viên"});
+            this.cbDoiTuong2.Location = new System.Drawing.Point(140, 135);
+            this.cbDoiTuong2.Name = "cbDoiTuong2";
+            this.cbDoiTuong2.Size = new System.Drawing.Size(100, 21);
+            this.cbDoiTuong2.TabIndex = 56;
             // 
             // FormMain
             // 
@@ -2073,7 +2094,6 @@
         private System.Windows.Forms.Button btnSuaDocGia2;
         private System.Windows.Forms.Button btnLuuDocGia2;
         private System.Windows.Forms.TextBox txtHoTen2;
-        private System.Windows.Forms.TextBox txtDoiTuong2;
         private System.Windows.Forms.TextBox txtMaDocGia2;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
@@ -2190,6 +2210,7 @@
         private System.Windows.Forms.TextBox txtTimNhanVien6;
         private Microsoft.Reporting.WinForms.ReportViewer reportThongKe;
         private System.Windows.Forms.ComboBox cbThongKe;
+        private System.Windows.Forms.ComboBox cbDoiTuong2;
     }
 }
 
