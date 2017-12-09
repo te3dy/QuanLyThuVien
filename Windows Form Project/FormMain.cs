@@ -22,7 +22,7 @@ namespace Windows_Form_Project
         private void FormMain_Load(object sender, EventArgs e)
         {
             tabMenu.SelectedTab = null;
-            this.reportThongKe.RefreshReport();
+            this.reportThongKe6.RefreshReport();
         }
         #endregion
 
@@ -62,7 +62,7 @@ namespace Windows_Form_Project
 
             // Draw image
             int y = -90;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 4; i++)
             {
                 g.DrawImage(tabIconList.Images[i], new Rectangle(12, y += 100, 80, 80));
             }
@@ -71,7 +71,16 @@ namespace Windows_Form_Project
         #endregion
 
         #region Menu Setting
+
+        private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau();
+            formDoiMatKhau.Show();
+        }
+
         #endregion
+
+        #region Tab 0: Danh Mục
 
         #region Tab 1: Tài Liệu
         #endregion
@@ -82,13 +91,26 @@ namespace Windows_Form_Project
         #region Tab 3: Thể Loại
         #endregion
 
-        #region Tab 4: Mượn Trả
+        #region Tab 4: Nhân Viên
         #endregion
 
-        #region Tab 5: Thống Kê
         #endregion
 
-        #region Tab 6: Nhân Viên
+        #region Tab 5: Mượn Trả
         #endregion
+
+        #region Tab 6: Thống Kê
+        #endregion
+
+        #region Tab 7: Tìm Kiếm
+
+        #region Tab 8: Tài Liệu
+        #endregion
+
+        #region Tab 9: Phiếu Mượn
+        #endregion
+
+        #endregion
+
     }
 }
