@@ -4,16 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DTO{
+namespace DTO
+{
     /**
      * 
      */
-    public class NhanVienDTO {
+    public class NhanVienDTO
+    {
 
         /**
          * 
          */
-        public NhanVienDTO() {
+        public NhanVienDTO()
+        {
         }
 
         /**
@@ -46,5 +49,14 @@ namespace DTO{
          */
         public string Quyen;
 
+        public NhanVienDTO(string maNhanVien, string hoTen, string chucVu, string taiKhoan, string matKhau, string quyen)
+        {
+            MaNhanVien = maNhanVien;
+            HoTen = hoTen;
+            ChucVu = chucVu;
+            TaiKhoan = taiKhoan;
+            MatKhau = matKhau;
+            Quyen = quyen;
+        }
     }
 }

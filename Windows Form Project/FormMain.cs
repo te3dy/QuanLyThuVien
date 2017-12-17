@@ -1,7 +1,10 @@
-﻿using System;
+﻿using BLL;
+using DTO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,18 +15,35 @@ namespace Windows_Form_Project
 {
     public partial class FormMain : Form
     {
+        Form formDangNhap;
+        NhanVienBO nhanVienBO = new NhanVienBO();
+        DocGiaBO docGiaBO = new DocGiaBO();
+        string taiKhoan;
+        string matKhau;
+
         #region Form Setting
 
-        public FormMain()
+        public FormMain(Form opener, string taiKhoan, string matKhau)
         {
             InitializeComponent();
+            formDangNhap = opener;
+            this.taiKhoan = taiKhoan;
+            this.matKhau = matKhau;
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
             tabMenu.SelectedTab = null;
-            this.reportThongKe6.RefreshReport();
+            subTabThongKe6.SelectedTab = null;
+            XemNhanVien();
+            this.reprotTaiLieuMuonQuaHan6.RefreshReport();
         }
+
+        private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            formDangNhap.Close();
+        }
+
         #endregion
 
         #region Tab Setting
@@ -74,24 +94,252 @@ namespace Windows_Form_Project
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau();
+            FormDoiMatKhau formDoiMatKhau = new FormDoiMatKhau(taiKhoan, matKhau);
             formDoiMatKhau.Show();
         }
 
+        private void đăngXuấtToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            DialogResult dialog = MessageBox.Show("Bạn có thực sự muốn đăng xuất", "Thông Báo", MessageBoxButtons.YesNo);
+            if (dialog == DialogResult.Yes)
+            {
+                this.Hide();
+                formDangNhap.Show();
+            }
+        }
+
+        private void tàiLiệuMượnQuáHạnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabMenu.SelectedTab = tabThongKe6;
+            subTabThongKe6.SelectedTab = tabTaiLieuMuonQuaHan6;
+        }
+
+        private void tàiLiệuHiệnChoMượnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabMenu.SelectedTab = tabThongKe6;
+            subTabThongKe6.SelectedTab = tabTaiLieuDangMuon6;
+        }
+
+        private void top10TàiLiệuMượnNhiềuNhấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabMenu.SelectedTab = tabThongKe6;
+            subTabThongKe6.SelectedTab = tabTaiLieuMuonNhieuNhat6;
+        }
+
+        private void sốLầnMượnTheoThểLoạiToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            tabMenu.SelectedTab = tabThongKe6;
+            subTabThongKe6.SelectedTab = tabMuonTheoTheLoai6;
+        }
         #endregion
 
         #region Tab 0: Danh Mục
 
         #region Tab 1: Tài Liệu
+
+        private void btnLuuTaiLieu1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSuaTaiLieu1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaTaiLieu1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNhapLai1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataTaiLieu1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Tab 2: Độc Giả
+
+        private void btnLuuDocGia2_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DateTime ngaySinh = dtNgaySinh2.Value;
+                DateTime ngayCap = dtNgayCap2.Value;
+                DateTime ngayHetHan = dtNgayHetHan2.Value;
+                int result1 = DateTime.Compare(ngaySinh, ngayCap);
+                int result2 = DateTime.Compare(ngayCap, ngayHetHan);
+                DocGiaDTO docGiaDTO;
+                bool gioiTinh = true;
+                if (rbGioiTinhNam2.Checked)
+                {
+                    gioiTinh = true;
+                }
+                if (rbGioiTinhNu2.Checked)
+                {
+                    gioiTinh = false;
+                }
+                if (result1 < 0 && result2 < 0)
+                {
+                    docGiaDTO = new DocGiaDTO(txtMaDocGia2.Text, txtHoTen2.Text, gioiTinh, dtNgaySinh2.Text, cbDoiTuong2.Text, dtNgayCap2.Text, dtNgayHetHan2.Text);
+                    docGiaBO.ThemDocGia(docGiaDTO);
+                }
+                else
+                {
+                    txtStatus.Text = "Nhập sai ngày";
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void btnSuaDocGia2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaDocGia2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNhapLai2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataDocGia2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
         #endregion
 
         #region Tab 3: Thể Loại
+
+        private void btnLuuTheLoai3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSuaTheLoai3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnXoaTheLoai3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNhapLai3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dataTheLoai3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
         #endregion
 
         #region Tab 4: Nhân Viên
+
+        private void XemNhanVien()
+        {
+            try
+            {
+                dataNhanVien4.DataSource = nhanVienBO.XemNhanVien();
+            }
+            catch (SqlException sex)
+            {
+                txtStatus.Text = "Lỗi lấy thông tin";
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = "Lỗi bảng nhân viên";
+            }
+        }
+
+        private void btnLuuNhanVien4_Click(object sender, EventArgs e)
+        {
+            NhanVienDTO nhanVienDTO = new NhanVienDTO(txtMaNhanVien4.Text, txtHoTen4.Text, cbChucVu4.Text, txtTenTaiKhoan4.Text, txtMatKhau4.Text, cbQuyen4.Text);
+            try
+            {
+                if (txtMatKhau4.Text.Equals(txtNhapLaiMatKhau4.Text))
+                {
+                    nhanVienBO.ThemNhanVien(nhanVienDTO);
+                }
+                else
+                {
+                    txtStatus.Text = "Mật khẩu nhập lại không khớp";
+                }
+            }
+            catch
+            {
+                txtStatus.Text = "Lỗi lưu nhân viên";
+            }
+            XemNhanVien();
+        }
+
+        private void btnSuaNhanVien4_Click(object sender, EventArgs e)
+        {
+            NhanVienDTO nhanVienDTO = new NhanVienDTO(txtMaNhanVien4.Text, txtHoTen4.Text, cbChucVu4.Text, txtTenTaiKhoan4.Text, txtMatKhau4.Text, cbQuyen4.Text);
+            try
+            {
+                if (txtMatKhau4.Text.Equals(txtNhapLaiMatKhau4.Text))
+                {
+                    nhanVienBO.SuaNhanVien(nhanVienDTO);
+                }
+                else
+                {
+                    txtStatus.Text = "Mật khẩu nhập lại không khớp";
+                }
+            }
+            catch
+            {
+                txtStatus.Text = "Lỗi sửa nhân viên";
+            }
+            XemNhanVien();
+        }
+
+        private void btnXoaNhanVien4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                nhanVienBO.XoaNhanVien(txtMaNhanVien4.Text);
+            }
+            catch
+            {
+                txtStatus.Text = "Mã cần xóa không tồn tại";
+            }
+            XemNhanVien();
+        }
+
+        private void btnNhapLai4_Click(object sender, EventArgs e)
+        {
+            NhapLai(tabNhanVien4);
+        }
+
+        private void dataNhanVien4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int i = dataNhanVien4.CurrentRow.Index;
+            txtMaNhanVien4.Text = dataNhanVien4.Rows[i].Cells[0].Value.ToString();
+            txtHoTen4.Text = dataNhanVien4.Rows[i].Cells[1].Value.ToString();
+            cbChucVu4.Text = dataNhanVien4.Rows[i].Cells[2].Value.ToString();
+            txtTenTaiKhoan4.Text = dataNhanVien4.Rows[i].Cells[3].Value.ToString();
+            txtMatKhau4.Text = dataNhanVien4.Rows[i].Cells[4].Value.ToString();
+            txtNhapLaiMatKhau4.Text = dataNhanVien4.Rows[i].Cells[4].Value.ToString();
+            cbQuyen4.Text = dataNhanVien4.Rows[i].Cells[5].Value.ToString();
+        }
         #endregion
 
         #endregion
@@ -111,6 +359,36 @@ namespace Windows_Form_Project
         #endregion
 
         #endregion
+
+        public void QuyenDocGia()
+        {
+            tabIconList.Images.RemoveAt(0);
+            tabIconList.Images.RemoveAt(0);
+            tabIconList.Images.RemoveAt(0);
+            tabMenu.TabPages.Remove(tabDanhMuc0);
+            tabMenu.TabPages.Remove(tabMuonTra5);
+            tabMenu.TabPages.Remove(tabThongKe6);
+            subTabTimKiem7.TabPages.Remove(tabTimKiemPhieuMuon9);
+            menuBar.Enabled = false;
+            đổiMậtKhẩuToolStripMenuItem.Enabled = false;
+        }
+
+        public void QuyenUser()
+        {
+            subTabDanhMuc0.TabPages.Remove(tabNhanVien4);
+            nhânViênToolStripMenuItem.Enabled = false;
+        }
+
+        public void NhapLai(TabPage tabPage)
+        {
+            foreach (Control ctrl in tabPage.Controls)
+            {
+                if (ctrl is TextBox)
+                {
+                    ctrl.Text = "";
+                }
+            }
+        }
 
     }
 }

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using BLL;
+using GUI.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,28 +9,67 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Windows_Form_Project.Properties;
 
 namespace Windows_Form_Project
 {
     public partial class FormDangNhap : Form
     {
-        FormMain formMain = new FormMain();
+        FormMain formMain;
+        DangNhapBO dangNhapBO = new DangNhapBO();
 
         public FormDangNhap()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-            //formMain.Enabled = true;
-            //this.Hide();
-        }
-
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
-            //formMain.Show();
-            //formMain.Enabled = false;
+            // Hiện tài khoản mật khẩu đã lưu
+            txtTaiKhoan.Text = Settings.Default.User;
+            txtMatKhau.Text = Settings.Default.Password;
+        }
+
+        private void btnDangNhap_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (dangNhapBO.XacNhanDangNhap(txtTaiKhoan.Text, txtMatKhau.Text))
+                {
+                    // Ẩn form đăng nhập
+                    this.Hide();
+
+                    // Lưu tài khoản và mật khẩu
+                    if (cbDangNhap.Checked == true)
+                    {
+                        Settings.Default.User = txtTaiKhoan.Text;
+                        Settings.Default.Password = txtMatKhau.Text;
+                        Settings.Default.Save();
+                    }
+                    else
+                    {
+                        Settings.Default.User = "";
+                        Settings.Default.Password = "";
+                        Settings.Default.Save();
+                    }
+
+                    // Phân quyền
+                    formMain = new FormMain(this, txtTaiKhoan.Text, txtMatKhau.Text);
+                    if (dangNhapBO.Quyen(txtTaiKhoan.Text, txtMatKhau.Text).Equals("User"))
+                    {
+                        formMain.QuyenUser();
+                    }
+                    formMain.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Tên đăng nhập hoặc mật khẩu không đúng", "Thông Báo");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("Không thể đăng nhập", "Thông Báo");
+            }
         }
     }
 }

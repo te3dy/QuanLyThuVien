@@ -12,52 +12,87 @@ namespace BLL
     /**
      * 
      */
-    public class NhanVienBO {
+    public class NhanVienBO
+    {
 
         /**
          * 
          */
-        public NhanVienBO() {
+        public NhanVienBO()
+        {
         }
 
         /**
          * 
          */
-        private NhanVienDTO nhanVienDTO;
-
+        private NhanVienDAO nhanVienDAO = new NhanVienDAO();
+        private DataTable dataTable;
         /**
          * @return
          */
-        public DataTable XemNhanVien() {
-            // TODO implement here
-            return null;
+        public DataTable XemNhanVien()
+        {
+            try
+            {
+                dataTable = nhanVienDAO.XemNhanVien();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dataTable;
         }
 
         /**
          * @param nhanVienDTO
          */
-        public void ThemNhanVien(NhanVienDTO nhanVienDTO) {
-            // TODO implement here
+        public void ThemNhanVien(NhanVienDTO nhanVienDTO)
+        {
+            try
+            {
+                nhanVienDAO.ThemNhanVien(nhanVienDTO);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /**
          * @param nhanVienDTO
          */
-        public void SuaNhanVien(NhanVienDTO nhanVienDTO) {
-            // TODO implement here
+        public void SuaNhanVien(NhanVienDTO nhanVienDTO)
+        {
+            try
+            {
+                nhanVienDAO.SuaNhanVien(nhanVienDTO);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /**
          * 
          */
-        public void XoaNhanVien() {
-            // TODO implement here
+        public void XoaNhanVien(string maNhanVien)
+        {
+            try
+            {
+                nhanVienDAO.XoaNhanVien(maNhanVien);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /**
          * @return
          */
-        public DataTable TimNhanVien() {
+        public DataTable TimNhanVien()
+        {
             // TODO implement here
             return null;
         }

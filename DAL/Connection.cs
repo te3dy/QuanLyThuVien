@@ -6,38 +6,44 @@ using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 
-namespace DAL{
+namespace DAL
+{
     /**
      * 
      */
-    public class Connection {
+    public class Connection
+    {
 
         /**
          * 
          */
-        public Connection() {
+        public Connection()
+        {
         }
 
         /**
          * 
          */
-        private String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+        //private String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
+        private String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection2"].ConnectionString;
 
         /**
          * 
          */
-        public SqlConnection connection;
+        public SqlConnection sqlConnection;
 
-        public void Open() {
-            connection = new SqlConnection(connectionString);
-            connection.Open();
+        public void Open()
+        {
+            sqlConnection = new SqlConnection(connectionString);
+            sqlConnection.Open();
         }
 
         /**
          * 
          */
-        public void Close() {
-            connection.Close();
+        public void Close()
+        {
+            sqlConnection.Close();
         }
 
     }

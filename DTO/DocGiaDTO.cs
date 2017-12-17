@@ -4,16 +4,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DTO{
+namespace DTO
+{
     /**
      * 
      */
-    public class DocGiaDTO {
+    public class DocGiaDTO
+    {
 
         /**
          * 
          */
-        public DocGiaDTO() {
+        public DocGiaDTO()
+        {
         }
 
         /**
@@ -34,7 +37,7 @@ namespace DTO{
         /**
          * 
          */
-        public DateTime NgaySinh;
+        public string NgaySinh;
 
         /**
          * 
@@ -44,12 +47,22 @@ namespace DTO{
         /**
          * 
          */
-        public DateTime NgayCap;
+        public string NgayCap;
 
         /**
          * 
          */
-        public DateTime NgayHetHan;
+        public string NgayHetHan;
 
+        public DocGiaDTO(string maDocGia, string hoTen, bool gioiTinh, string ngaySinh, string doiTuong, string ngayCap, string ngayHetHan)
+        {
+            MaDocGia = maDocGia;
+            HoTen = hoTen;
+            GioiTinh = gioiTinh;
+            NgaySinh = ngaySinh;
+            DoiTuong = doiTuong;
+            NgayCap = ngayCap;
+            NgayHetHan = ngayHetHan;
+        }
     }
 }

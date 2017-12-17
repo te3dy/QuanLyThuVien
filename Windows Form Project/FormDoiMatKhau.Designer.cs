@@ -29,26 +29,27 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoiMatKhau));
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnHuyBo = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtMatKhauCu = new System.Windows.Forms.TextBox();
+            this.txtMatKhauMoi = new System.Windows.Forms.TextBox();
+            this.txtNhapLaiMatKhau = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnXacNhan
             // 
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(118, 141);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 38);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Thay Đổi";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Image = ((System.Drawing.Image)(resources.GetObject("btnXacNhan.Image")));
+            this.btnXacNhan.Location = new System.Drawing.Point(118, 141);
+            this.btnXacNhan.Name = "btnXacNhan";
+            this.btnXacNhan.Size = new System.Drawing.Size(95, 38);
+            this.btnXacNhan.TabIndex = 0;
+            this.btnXacNhan.Text = "Xác Nhận";
+            this.btnXacNhan.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.btnXacNhan_Click);
             // 
             // btnHuyBo
             // 
@@ -60,6 +61,7 @@
             this.btnHuyBo.Text = "Hủy Bỏ";
             this.btnHuyBo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnHuyBo.UseVisualStyleBackColor = true;
+            this.btnHuyBo.Click += new System.EventHandler(this.btnHuyBo_Click);
             // 
             // label1
             // 
@@ -91,40 +93,43 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Nhập Lại Mật Khẩu Mới";
             // 
-            // textBox1
+            // txtMatKhauCu
             // 
-            this.textBox1.Location = new System.Drawing.Point(186, 25);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(214, 20);
-            this.textBox1.TabIndex = 5;
+            this.txtMatKhauCu.Location = new System.Drawing.Point(186, 25);
+            this.txtMatKhauCu.Name = "txtMatKhauCu";
+            this.txtMatKhauCu.Size = new System.Drawing.Size(214, 20);
+            this.txtMatKhauCu.TabIndex = 5;
+            this.txtMatKhauCu.UseSystemPasswordChar = true;
             // 
-            // textBox2
+            // txtMatKhauMoi
             // 
-            this.textBox2.Location = new System.Drawing.Point(186, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(214, 20);
-            this.textBox2.TabIndex = 6;
+            this.txtMatKhauMoi.Location = new System.Drawing.Point(186, 63);
+            this.txtMatKhauMoi.Name = "txtMatKhauMoi";
+            this.txtMatKhauMoi.Size = new System.Drawing.Size(214, 20);
+            this.txtMatKhauMoi.TabIndex = 6;
+            this.txtMatKhauMoi.UseSystemPasswordChar = true;
             // 
-            // textBox3
+            // txtNhapLaiMatKhau
             // 
-            this.textBox3.Location = new System.Drawing.Point(186, 102);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(214, 20);
-            this.textBox3.TabIndex = 7;
+            this.txtNhapLaiMatKhau.Location = new System.Drawing.Point(186, 102);
+            this.txtNhapLaiMatKhau.Name = "txtNhapLaiMatKhau";
+            this.txtNhapLaiMatKhau.Size = new System.Drawing.Size(214, 20);
+            this.txtNhapLaiMatKhau.TabIndex = 7;
+            this.txtNhapLaiMatKhau.UseSystemPasswordChar = true;
             // 
             // FormDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(447, 191);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtNhapLaiMatKhau);
+            this.Controls.Add(this.txtMatKhauMoi);
+            this.Controls.Add(this.txtMatKhauCu);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnHuyBo);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnXacNhan);
             this.Name = "FormDoiMatKhau";
             this.Text = "Đổi Mật Khẩu";
             this.ResumeLayout(false);
@@ -134,13 +139,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnXacNhan;
         private System.Windows.Forms.Button btnHuyBo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtMatKhauCu;
+        private System.Windows.Forms.TextBox txtMatKhauMoi;
+        private System.Windows.Forms.TextBox txtNhapLaiMatKhau;
     }
 }
