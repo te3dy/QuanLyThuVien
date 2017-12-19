@@ -390,5 +390,14 @@ namespace Windows_Form_Project
             }
         }
 
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label24_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
