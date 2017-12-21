@@ -18,6 +18,8 @@ namespace Windows_Form_Project
         Form formDangNhap;
         NhanVienBO nhanVienBO = new NhanVienBO();
         DocGiaBO docGiaBO = new DocGiaBO();
+        TaiLieuBO taiLieuBO = new TaiLieuBO();
+        TheLoaiBO theLoaiBO = new TheLoaiBO();
         string taiKhoan;
         string matKhau;
 
@@ -133,10 +135,32 @@ namespace Windows_Form_Project
         #region Tab 0: Danh Mục
 
         #region Tab 1: Tài Liệu
-
+        private void XemTaiLieu()
+        {
+            try
+            {
+                DataTable dataTable = taiLieuBO.XemTaiLieu();
+                dataTaiLieu1.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = "Lỗi bảng Độc Giả";
+            }
+        }
         private void btnLuuTaiLieu1_Click(object sender, EventArgs e)
         {
+            try
+            {
+                TaiLieuDTO taiLieuDTO = new TaiLieuDTO(txtMaTaiLieu1.Text,txtTenTaiLieu1.Text,txtMaTheLoai1.Text,10,txtNhaXuatBan1.Text
+                    ,20,txtTacGia1.Text);
+                taiLieuBO.ThemTaiLieu(taiLieuDTO);
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = "Lỗi ghi thông tin !";
+            }
 
+            XemTaiLieu();
         }
 
         private void btnSuaTaiLieu1_Click(object sender, EventArgs e)
@@ -302,10 +326,31 @@ namespace Windows_Form_Project
         #endregion
 
         #region Tab 3: Thể Loại
-
+        private void XemTheLoai()
+        {
+            try
+            {
+                DataTable dataTable = theLoaiBO.XemTheLoai();
+                dataTheLoai3.DataSource = dataTable;
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = "Lỗi bảng thể loại";
+            }
+        }
         private void btnLuuTheLoai3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                TheLoaiDTO theLoaiDTO = new TheLoaiDTO(txtMaTheLoai3.Text, txtTenTheLoai3.Text, txtGhiChu3.Text);
+                theLoaiBO.ThemTheLoai(theLoaiDTO);
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = "Lỗi ghi thông tin !";
+            }
 
+            XemTheLoai();
         }
 
         private void btnSuaTheLoai3_Click(object sender, EventArgs e)

@@ -99,7 +99,6 @@
             this.btnLuuTaiLieu1 = new System.Windows.Forms.Button();
             this.txtTenTaiLieu1 = new System.Windows.Forms.TextBox();
             this.txtNhaXuatBan1 = new System.Windows.Forms.TextBox();
-            this.txtMaTaiLieu1 = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -116,6 +115,13 @@
             this.dtNgayCap2 = new System.Windows.Forms.DateTimePicker();
             this.dtNgaySinh2 = new System.Windows.Forms.DateTimePicker();
             this.dataDocGia2 = new System.Windows.Forms.DataGridView();
+            this.MaDocGia2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HoTen2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.GioiTinh2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgaySinh2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.DoiTuong2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayCap2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NgayHetHan2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnXoaDocGia2 = new System.Windows.Forms.Button();
             this.btnSuaDocGia2 = new System.Windows.Forms.Button();
             this.btnLuuDocGia2 = new System.Windows.Forms.Button();
@@ -224,13 +230,7 @@
             this.đổiMậtKhẩuToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.txtStatus = new System.Windows.Forms.Label();
-            this.MaDocGia2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HoTen2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.GioiTinh2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgaySinh2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.DoiTuong2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayCap2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NgayHetHan2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtMaTaiLieu1 = new System.Windows.Forms.TextBox();
             this.menuBar.SuspendLayout();
             this.tabMuonTra5.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -967,14 +967,6 @@
             this.txtNhaXuatBan1.Size = new System.Drawing.Size(172, 20);
             this.txtNhaXuatBan1.TabIndex = 93;
             // 
-            // txtMaTaiLieu1
-            // 
-            this.txtMaTaiLieu1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.txtMaTaiLieu1.Location = new System.Drawing.Point(141, 20);
-            this.txtMaTaiLieu1.Name = "txtMaTaiLieu1";
-            this.txtMaTaiLieu1.Size = new System.Drawing.Size(172, 20);
-            this.txtMaTaiLieu1.TabIndex = 89;
-            // 
             // label8
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -1202,6 +1194,62 @@
             this.dataDocGia2.Size = new System.Drawing.Size(663, 197);
             this.dataDocGia2.TabIndex = 75;
             this.dataDocGia2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataDocGia2_CellClick);
+            // 
+            // MaDocGia2
+            // 
+            this.MaDocGia2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.MaDocGia2.DataPropertyName = "MaDocGia";
+            this.MaDocGia2.HeaderText = "Mã Độc Giả";
+            this.MaDocGia2.Name = "MaDocGia2";
+            this.MaDocGia2.ReadOnly = true;
+            // 
+            // HoTen2
+            // 
+            this.HoTen2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.HoTen2.DataPropertyName = "HoTen";
+            this.HoTen2.HeaderText = "Họ Tên";
+            this.HoTen2.Name = "HoTen2";
+            this.HoTen2.ReadOnly = true;
+            // 
+            // GioiTinh2
+            // 
+            this.GioiTinh2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.GioiTinh2.DataPropertyName = "GioiTinh";
+            this.GioiTinh2.HeaderText = "Giới Tính";
+            this.GioiTinh2.Name = "GioiTinh2";
+            this.GioiTinh2.ReadOnly = true;
+            // 
+            // NgaySinh2
+            // 
+            this.NgaySinh2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NgaySinh2.DataPropertyName = "NgaySinh";
+            this.NgaySinh2.HeaderText = "Ngày Sinh";
+            this.NgaySinh2.Name = "NgaySinh2";
+            this.NgaySinh2.ReadOnly = true;
+            // 
+            // DoiTuong2
+            // 
+            this.DoiTuong2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.DoiTuong2.DataPropertyName = "DoiTuong";
+            this.DoiTuong2.HeaderText = "Đối Tượng";
+            this.DoiTuong2.Name = "DoiTuong2";
+            this.DoiTuong2.ReadOnly = true;
+            // 
+            // NgayCap2
+            // 
+            this.NgayCap2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NgayCap2.DataPropertyName = "NgayCap";
+            this.NgayCap2.HeaderText = "Ngày Cấp";
+            this.NgayCap2.Name = "NgayCap2";
+            this.NgayCap2.ReadOnly = true;
+            // 
+            // NgayHetHan2
+            // 
+            this.NgayHetHan2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.NgayHetHan2.DataPropertyName = "NgayHetHan";
+            this.NgayHetHan2.HeaderText = "Ngày Hết Hạn";
+            this.NgayHetHan2.Name = "NgayHetHan2";
+            this.NgayHetHan2.ReadOnly = true;
             // 
             // btnXoaDocGia2
             // 
@@ -2497,61 +2545,13 @@
             this.txtStatus.TabIndex = 68;
             this.txtStatus.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // MaDocGia2
+            // txtMaTaiLieu1
             // 
-            this.MaDocGia2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.MaDocGia2.DataPropertyName = "MaDocGia";
-            this.MaDocGia2.HeaderText = "Mã Độc Giả";
-            this.MaDocGia2.Name = "MaDocGia2";
-            this.MaDocGia2.ReadOnly = true;
-            // 
-            // HoTen2
-            // 
-            this.HoTen2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.HoTen2.DataPropertyName = "HoTen";
-            this.HoTen2.HeaderText = "Họ Tên";
-            this.HoTen2.Name = "HoTen2";
-            this.HoTen2.ReadOnly = true;
-            // 
-            // GioiTinh2
-            // 
-            this.GioiTinh2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.GioiTinh2.DataPropertyName = "GioiTinh";
-            this.GioiTinh2.HeaderText = "Giới Tính";
-            this.GioiTinh2.Name = "GioiTinh2";
-            this.GioiTinh2.ReadOnly = true;
-            // 
-            // NgaySinh2
-            // 
-            this.NgaySinh2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NgaySinh2.DataPropertyName = "NgaySinh";
-            this.NgaySinh2.HeaderText = "Ngày Sinh";
-            this.NgaySinh2.Name = "NgaySinh2";
-            this.NgaySinh2.ReadOnly = true;
-            // 
-            // DoiTuong2
-            // 
-            this.DoiTuong2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.DoiTuong2.DataPropertyName = "DoiTuong";
-            this.DoiTuong2.HeaderText = "Đối Tượng";
-            this.DoiTuong2.Name = "DoiTuong2";
-            this.DoiTuong2.ReadOnly = true;
-            // 
-            // NgayCap2
-            // 
-            this.NgayCap2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NgayCap2.DataPropertyName = "NgayCap";
-            this.NgayCap2.HeaderText = "Ngày Cấp";
-            this.NgayCap2.Name = "NgayCap2";
-            this.NgayCap2.ReadOnly = true;
-            // 
-            // NgayHetHan2
-            // 
-            this.NgayHetHan2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.NgayHetHan2.DataPropertyName = "NgayHetHan";
-            this.NgayHetHan2.HeaderText = "Ngày Hết Hạn";
-            this.NgayHetHan2.Name = "NgayHetHan2";
-            this.NgayHetHan2.ReadOnly = true;
+            this.txtMaTaiLieu1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.txtMaTaiLieu1.Location = new System.Drawing.Point(141, 20);
+            this.txtMaTaiLieu1.Name = "txtMaTaiLieu1";
+            this.txtMaTaiLieu1.Size = new System.Drawing.Size(172, 20);
+            this.txtMaTaiLieu1.TabIndex = 89;
             // 
             // FormMain
             // 
@@ -2661,7 +2661,6 @@
         private System.Windows.Forms.Button btnLuuTaiLieu1;
         private System.Windows.Forms.TextBox txtTenTaiLieu1;
         private System.Windows.Forms.TextBox txtNhaXuatBan1;
-        private System.Windows.Forms.TextBox txtMaTaiLieu1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
@@ -2822,6 +2821,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn DoiTuong2;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayCap2;
         private System.Windows.Forms.DataGridViewTextBoxColumn NgayHetHan2;
+        private System.Windows.Forms.TextBox txtMaTaiLieu1;
     }
 }
 

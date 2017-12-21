@@ -28,29 +28,32 @@ namespace BLL
         /**
          * @return
          */
-        public DataTable XemPhieuMuonChiTiet() {
+        public DataTable XemPhieuMuonChiTiet(string MaPhieuMuon) {
             // TODO implement here
-            return null;
+            return phieuMuonChiTietDAO.XemPhieuMuonChiTiet(MaPhieuMuon);
         }
 
         /**
          * @param phieuMuonChiTietDAO
          */
-        public void ThemPhieuMuonChiTiet(PhieuMuonChiTietDAO phieuMuonChiTietDAO) {
+        public void ThemPhieuMuonChiTiet(PhieuMuonChiTietDTO phieuMuonChiTietDTO) {
+            phieuMuonChiTietDAO.ThemPhieuMuonChiTiet(phieuMuonChiTietDTO);
             // TODO implement here
         }
 
         /**
          * @param phieuMuonChiTietDAO
          */
-        public void SuaPhieuMuonChiTiet(PhieuMuonChiTietDAO phieuMuonChiTietDAO) {
+        public void SuaPhieuMuonChiTiet(PhieuMuonChiTietDTO phieuMuonChiTietDTO) {
+            phieuMuonChiTietDAO.SuaPhieuMuonChiTiet(phieuMuonChiTietDTO);
             // TODO implement here
         }
 
         /**
          * 
          */
-        public void XoaPhieuMuonChiTiet() {
+        public void XoaPhieuMuonChiTiet(string MaPhieuMuon) {
+            phieuMuonChiTietDAO.XoaPhieuMuonChiTiet(MaPhieuMuon);
             // TODO implement here
         }
 

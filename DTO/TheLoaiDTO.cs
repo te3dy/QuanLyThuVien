@@ -19,6 +19,12 @@ namespace DTO{
         /**
          * 
          */
+        public TheLoaiDTO(string maTheLoai, string tenTheLoai, string ghiChu)
+        {
+            MaTheLoai = maTheLoai;
+            TenTheLoai = tenTheLoai;
+            GhiChu = ghiChu;
+        }
         public string MaTheLoai;
 
         /**

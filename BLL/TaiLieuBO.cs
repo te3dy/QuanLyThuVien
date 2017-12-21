@@ -23,36 +23,69 @@ namespace BLL
         /**
          * 
          */
-        private TaiLieuDAO taiLieuDAO;
+        private TaiLieuDAO taiLieuDAO = new TaiLieuDAO();
+        private DataTable dataTable;
 
         /**
          * @return
          */
         public DataTable XemTaiLieu() {
             // TODO implement here
-            return null;
+            try
+            {
+                dataTable = taiLieuDAO.XemTaiLieu();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dataTable;
         }
 
         /**
          * @param taiLieuDTO
          */
         public void ThemTaiLieu(TaiLieuDTO taiLieuDTO) {
-            // TODO implement here
+        // TODO implement here
+        try
+        {
+            taiLieuDAO.ThemTaiLieu(taiLieuDTO);
         }
+        catch (Exception ex)
+        {
+            throw ex;
+        }
+    }
 
         /**
          * @param taiLieuDTO
          */
         public void SuaTaiLieu(TaiLieuDTO taiLieuDTO) {
             // TODO implement here
+            try
+            {
+                taiLieuDAO.SuaTaiLieu(taiLieuDTO);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /**
          * 
          */
-        public void XoaTaiLieu() {
-            // TODO implement here
-        }
+        public void XoaTaiLieu(string maTaiLieu) {
+        // TODO implement here
+            try
+            {
+            taiLieuDAO.XoaTaiLieu(maTaiLieu);
+            }
+            catch (Exception ex)
+            {
+            throw ex;
+            }
+    }
 
         /**
          * @return

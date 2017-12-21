@@ -23,14 +23,23 @@ namespace BLL
         /**
          * 
          */
-        private TheLoaiDAO theLoaiDAO;
+        private TheLoaiDAO theLoaiDAO = new TheLoaiDAO();
+        private DataTable dataTable;
 
         /**
          * @return
          */
         public DataTable XemTheLoai() {
             // TODO implement here
-            return null;
+            try
+            {
+                dataTable = theLoaiDAO.XemTheLoai();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dataTable;
         }
 
         /**
@@ -38,6 +47,14 @@ namespace BLL
          */
         public void ThemTheLoai(TheLoaiDTO theLoaiDTO) {
             // TODO implement here
+            try
+            {
+                theLoaiDAO.ThemTheLoai(theLoaiDTO);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /**
@@ -45,13 +62,29 @@ namespace BLL
          */
         public void SuaTheLoai(TheLoaiDTO theLoaiDTO) {
             // TODO implement here
+            try
+            {
+                theLoaiDAO.SuaTaiLieu(theLoaiDTO);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /**
          * 
          */
-        public void XoaTheLoai() {
+        public void XoaTheLoai(string maTheLoai) {
             // TODO implement here
+            try
+            {
+                theLoaiDAO.XoaTaiLieu(maTheLoai);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /**

@@ -16,6 +16,17 @@ namespace DTO{
         public PhieuMuonChiTietDTO() {
         }
 
+        public PhieuMuonChiTietDTO(string maPhieuMuon, string maSach, int soLuongMuon, string ngayTra)
+        {
+            MaPhieuMuon = maPhieuMuon;
+            MaSach = maSach;
+            SoLuongMuon = soLuongMuon;
+            NgayTra = ngayTra;
+        }
+
+
+
+
         /**
          * 
          */
@@ -34,7 +45,7 @@ namespace DTO{
         /**
          * 
          */
-        public DateTime NgayTra;
+        public String NgayTra;
 
     }
 }

@@ -15,7 +15,16 @@ namespace DTO{
          */
         public TaiLieuDTO() {
         }
-
+        public TaiLieuDTO(string maTaiLieu, string tenTaiLieu, string maTheLoai, int soLuong, string nhaXuatBan, int namXuatBan, string tacGia )
+        {
+            MaTaiLieu = maTaiLieu;
+            TenTaiLieu = tenTaiLieu;
+            MaTheLoai = maTheLoai;
+            SoLuong = soLuong;
+            NhaXuatBan = nhaXuatBan;
+            NamXuatBan = namXuatBan;
+            TacGia = tacGia;
+        }
         /**
          * 
          */
@@ -44,7 +53,7 @@ namespace DTO{
         /**
          * 
          */
-        public string NamXuatBan;
+        public int NamXuatBan;
 
         /**
          * 

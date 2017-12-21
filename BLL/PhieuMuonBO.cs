@@ -17,26 +17,30 @@ namespace BLL
         /**
          * 
          */
+         
         public PhieuMuonBO() {
         }
 
         /**
          * 
          */
-        private PhieuMuonDAO phieuMuonDAO;
+        private PhieuMuonDAO phieuMuonDAO=new PhieuMuonDAO();
 
         /**
          * @return
          */
-        public DataTable XemPhieuMuon() {
+        public DataTable XemPhieuMuon(string MaDocGia) {
             // TODO implement here
-            return null;
+            return phieuMuonDAO.XemPhieuMuon(MaDocGia);
         }
-
+        public DataTable XemHet() {
+            return phieuMuonDAO.XemHet();
+        }
         /**
          * @param phieuMuonDTO
          */
         public void ThemPhieuMuon(PhieuMuonDTO phieuMuonDTO) {
+            phieuMuonDAO.ThemPhieuMuon(phieuMuonDTO);
             // TODO implement here
         }
 
@@ -44,16 +48,20 @@ namespace BLL
          * @param phieuMuonDTO
          */
         public void SuaPhieuMuon(PhieuMuonDTO phieuMuonDTO) {
+            phieuMuonDAO.SuaPhieuMuon(phieuMuonDTO);
             // TODO implement here
         }
 
         /**
          * 
          */
-        public void XoaPhieuMuon() {
+        public void XoaPhieuMuon(string MaPhieuMuon) {
+            phieuMuonDAO.XoaPhieuMuon(MaPhieuMuon);
             // TODO implement here
         }
 
+       
+        
         /**
          * @return
          */
