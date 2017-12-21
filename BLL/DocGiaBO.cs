@@ -11,52 +11,88 @@ namespace BLL
     /**
      * 
      */
-    public class DocGiaBO {
+    public class DocGiaBO
+    {
 
         /**
          * 
          */
-        public DocGiaBO() {
+        public DocGiaBO()
+        {
         }
 
         /**
          * 
          */
-        private DocGiaDAO docGiaDAO;
+        private DocGiaDAO docGiaDAO = new DocGiaDAO();
+        private DataTable dataTable;
 
         /**
          * @return
          */
-        public DataTable XemDocGia() {
-            // TODO implement here
-            return null;
+        public DataTable XemDocGia()
+        {
+            try
+            {
+                dataTable = docGiaDAO.XemDocGia();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dataTable;
         }
 
         /**
          * @param docGiaDTO
          */
-        public void ThemDocGia(DocGiaDTO docGiaDTO) {
-            // TODO implement here
+        public void ThemDocGia(DocGiaDTO docGiaDTO)
+        {
+            try
+            {
+                docGiaDAO.ThemDocGia(docGiaDTO);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /**
          * @param docGiaDTO
          */
-        public void SuaDocGia(DocGiaDTO docGiaDTO) {
-            // TODO implement here
+        public void SuaDocGia(DocGiaDTO docGiaDTO)
+        {
+            try
+            {
+                docGiaDAO.SuaDocGia(docGiaDTO);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /**
          * 
          */
-        public void XoaDocGia() {
-            // TODO implement here
+        public void XoaDocGia(string maDocGia)
+        {
+            try
+            {
+                docGiaDAO.XoaDocGia(maDocGia);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
         /**
          * @return
          */
-        public DataTable TimDocGia() {
+        public DataTable TimDocGia()
+        {
             // TODO implement here
             return null;
         }

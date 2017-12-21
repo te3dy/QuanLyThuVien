@@ -34,9 +34,6 @@ namespace Windows_Form_Project
         private void FormMain_Load(object sender, EventArgs e)
         {
             tabMenu.SelectedTab = null;
-            subTabThongKe6.SelectedTab = null;
-            XemNhanVien();
-            this.reprotTaiLieuMuonQuaHan6.RefreshReport();
         }
 
         private void FormMain_FormClosing(object sender, FormClosingEventArgs e)
@@ -166,25 +163,51 @@ namespace Windows_Form_Project
 
         #region Tab 2: Độc Giả
 
-        private void btnLuuDocGia2_Click(object sender, EventArgs e)
+        private void XemDocGia()
         {
             try
             {
-                DateTime ngaySinh = dtNgaySinh2.Value;
-                DateTime ngayCap = dtNgayCap2.Value;
-                DateTime ngayHetHan = dtNgayHetHan2.Value;
-                int result1 = DateTime.Compare(ngaySinh, ngayCap);
-                int result2 = DateTime.Compare(ngayCap, ngayHetHan);
-                DocGiaDTO docGiaDTO;
-                bool gioiTinh = true;
-                if (rbGioiTinhNam2.Checked)
-                {
-                    gioiTinh = true;
-                }
-                if (rbGioiTinhNu2.Checked)
-                {
-                    gioiTinh = false;
-                }
+                DataTable dataTable = docGiaBO.XemDocGia();
+                //dataTable.Columns.Add("Giới Tính", typeof(string));
+                dataDocGia2.DataSource = dataTable;
+                //for (int i = 0; i < dataTable.Rows.Count; i++)
+                //{
+                //    if (dataDocGia2.Rows[i].Cells["GioiTinh"].Value.ToString() == "True")
+                //    {
+                //        dataDocGia2.Rows[i].Cells[3].Value = "Nam";
+                //        //dataDocGia2.UpdateCellValue(i, );
+                //    }
+                //}
+            }
+            catch (SqlException sex)
+            {
+                txtStatus.Text = "Lỗi lấy thông tin";
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = "Lỗi bảng Độc Giả";
+            }
+        }
+
+        private void btnLuuDocGia2_Click(object sender, EventArgs e)
+        {
+            DocGiaDTO docGiaDTO;
+            DateTime ngaySinh = dtNgaySinh2.Value;
+            DateTime ngayCap = dtNgayCap2.Value;
+            DateTime ngayHetHan = dtNgayHetHan2.Value;
+            int result1 = DateTime.Compare(ngaySinh, ngayCap);
+            int result2 = DateTime.Compare(ngayCap, ngayHetHan);
+            bool gioiTinh = true;
+            if (rbGioiTinhNam2.Checked)
+            {
+                gioiTinh = true;
+            }
+            if (rbGioiTinhNu2.Checked)
+            {
+                gioiTinh = false;
+            }
+            try
+            {
                 if (result1 < 0 && result2 < 0)
                 {
                     docGiaDTO = new DocGiaDTO(txtMaDocGia2.Text, txtHoTen2.Text, gioiTinh, dtNgaySinh2.Text, cbDoiTuong2.Text, dtNgayCap2.Text, dtNgayHetHan2.Text);
@@ -197,27 +220,82 @@ namespace Windows_Form_Project
             }
             catch
             {
-
+                txtStatus.Text = "Lỗi lưu độc giả";
             }
+            XemDocGia();
         }
 
         private void btnSuaDocGia2_Click(object sender, EventArgs e)
         {
-
+            DocGiaDTO docGiaDTO;
+            DateTime ngaySinh = dtNgaySinh2.Value;
+            DateTime ngayCap = dtNgayCap2.Value;
+            DateTime ngayHetHan = dtNgayHetHan2.Value;
+            int result1 = DateTime.Compare(ngaySinh, ngayCap);
+            int result2 = DateTime.Compare(ngayCap, ngayHetHan);
+            bool gioiTinh = true;
+            try
+            {
+                if (rbGioiTinhNam2.Checked)
+                {
+                    gioiTinh = true;
+                }
+                if (rbGioiTinhNu2.Checked)
+                {
+                    gioiTinh = false;
+                }
+                if (result1 < 0 && result2 < 0)
+                {
+                    docGiaDTO = new DocGiaDTO(txtMaDocGia2.Text, txtHoTen2.Text, gioiTinh, dtNgaySinh2.Text, cbDoiTuong2.Text, dtNgayCap2.Text, dtNgayHetHan2.Text);
+                    docGiaBO.SuaDocGia(docGiaDTO);
+                }
+                else
+                {
+                    txtStatus.Text = "Nhập sai ngày";
+                }
+            }
+            catch
+            {
+                txtStatus.Text = "Lỗi Sửa Độc Giả " + txtMaDocGia2.Text;
+            }
+            XemDocGia();
         }
 
         private void btnXoaDocGia2_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                docGiaBO.XoaDocGia(txtMaDocGia2.Text);
+            }
+            catch
+            {
+                txtStatus.Text = "Lỗi Xóa Độc Giả";
+            }
+            XemDocGia();
         }
 
         private void btnNhapLai2_Click(object sender, EventArgs e)
         {
-
+            NhapLai(tabDocGia2);
         }
 
         private void dataDocGia2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            int i = dataDocGia2.CurrentRow.Index;
+            txtMaDocGia2.Text = dataDocGia2.Rows[i].Cells[0].Value.ToString();
+            txtHoTen2.Text = dataDocGia2.Rows[i].Cells[1].Value.ToString();
+            if(dataDocGia2.Rows[i].Cells[2].Value.ToString() == "True")
+            {
+                rbGioiTinhNam2.Checked = true;
+            }
+            if(dataDocGia2.Rows[i].Cells[2].Value.ToString() == "False")
+            {
+                rbGioiTinhNu2.Checked = true;
+            }
+            dtNgaySinh2.Text = dataDocGia2.Rows[i].Cells[3].Value.ToString();
+            cbDoiTuong2.Text = dataDocGia2.Rows[i].Cells[4].Value.ToString();
+            dtNgayCap2.Text = dataDocGia2.Rows[i].Cells[5].Value.ToString();
+            dtNgayHetHan2.Text = dataDocGia2.Rows[i].Cells[6].Value.ToString();
 
         }
 
@@ -342,6 +420,18 @@ namespace Windows_Form_Project
         }
         #endregion
 
+        private void subTabDanhMuc0_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (e.TabPage == tabNhanVien4)
+            {
+                XemNhanVien();
+            }
+            if (e.TabPage == tabDocGia2)
+            {
+                XemDocGia();
+            }
+        }
+
         #endregion
 
         #region Tab 5: Mượn Trả
@@ -390,14 +480,17 @@ namespace Windows_Form_Project
             }
         }
 
-        private void label18_Click(object sender, EventArgs e)
+
+        private void AutoComplete(TextBox textBox, DataTable dataTable, string tenCot)
         {
-
-        }
-
-        private void label24_Click(object sender, EventArgs e)
-        {
-
+            textBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
+            textBox.AutoCompleteSource = AutoCompleteSource.CustomSource;
+            AutoCompleteStringCollection auto = new AutoCompleteStringCollection();
+            for (int i = 0; i < dataTable.Rows.Count; i++)
+            {
+                auto.Add(dataTable.Rows[i].Field<string>(tenCot));
+            }
+            txtTenTaiLieu1.AutoCompleteCustomSource = auto;
         }
     }
 }

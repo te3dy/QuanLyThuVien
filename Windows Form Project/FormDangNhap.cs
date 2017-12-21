@@ -71,5 +71,21 @@ namespace Windows_Form_Project
                 MessageBox.Show("Không thể đăng nhập", "Thông Báo");
             }
         }
+
+        private void txtTaiKhoan_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnDangNhap.PerformClick();
+            }
+        }
+
+        private void txtMatKhau_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnDangNhap.PerformClick();
+            }
+        }
     }
 }

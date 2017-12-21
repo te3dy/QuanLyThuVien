@@ -65,6 +65,7 @@
             this.txtTaiKhoan.Name = "txtTaiKhoan";
             this.txtTaiKhoan.Size = new System.Drawing.Size(165, 20);
             this.txtTaiKhoan.TabIndex = 2;
+            this.txtTaiKhoan.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtTaiKhoan_KeyDown);
             // 
             // txtMatKhau
             // 
@@ -73,6 +74,7 @@
             this.txtMatKhau.Size = new System.Drawing.Size(165, 20);
             this.txtMatKhau.TabIndex = 3;
             this.txtMatKhau.UseSystemPasswordChar = true;
+            this.txtMatKhau.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMatKhau_KeyDown);
             // 
             // btnDangNhap
             // 

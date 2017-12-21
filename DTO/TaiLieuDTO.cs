@@ -44,7 +44,7 @@ namespace DTO{
         /**
          * 
          */
-        public DateTime NamXuatBan;
+        public string NamXuatBan;
 
         /**
          * 
