@@ -38,9 +38,8 @@ namespace Windows_Form_Project
             // TODO: This line of code loads data into the 'duLieuPhanMem.VW_TaiLieuQuaHan' table. You can move, or remove it, as needed.
             this.vW_TaiLieuQuaHanTableAdapter.Fill(this.duLieuPhanMem.VW_TaiLieuQuaHan);
             // TODO: This line of code loads data into the 'duLieuPhanMem.VW_SoLanMuon' table. You can move, or remove it, as needed.
-            this.vW_SoLanMuonTableAdapter.Fill(this.duLieuPhanMem.VW_SoLanMuon);
             // TODO: This line of code loads data into the 'duLieuPhanMem.VW_TaiLieuChoMuon' table. You can move, or remove it, as needed.
-            this.vW_TaiLieuChoMuonTableAdapter.Fill(this.duLieuPhanMem.VW_TaiLieuChoMuon);
+          //  this.vW_TaiLieuChoMuonTableAdapter.Fill(duLieuPhanMem.VW_SoLanMuon);
             // TODO: This line of code loads data into the 'duLieuPhanMem.VW_TaiLieuMuonNhieuNhat' table. You can move, or remove it, as needed.
             this.vW_TaiLieuMuonNhieuNhatTableAdapter.Fill(this.duLieuPhanMem.VW_TaiLieuMuonNhieuNhat);
             tabMenu.SelectedTab = null;

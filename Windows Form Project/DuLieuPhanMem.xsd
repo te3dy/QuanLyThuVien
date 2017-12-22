@@ -30,9 +30,9 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="VW_SoLanMuonTableAdapter" GeneratorDataComponentClassName="VW_SoLanMuonTableAdapter" Name="VW_SoLanMuon" UserDataComponentName="VW_SoLanMuonTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.VW_SoLanMuon" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="DatabaseConnectionString (Settings)" DbObjectName="dbo.VW_SoLanMuon" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT MaTheLoai, TenTheLoai, SoLuongMuon FROM dbo.VW_SoLanMuon</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -93,7 +93,7 @@
   <xs:element name="DuLieuPhanMem" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DuLieuPhanMem" msprop:Generator_UserDSName="DuLieuPhanMem">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="VW_TaiLieuChoMuon" msprop:Generator_TableClassName="VW_TaiLieuChoMuonDataTable" msprop:Generator_TableVarName="tableVW_TaiLieuChoMuon" msprop:Generator_TablePropName="VW_TaiLieuChoMuon" msprop:Generator_RowDeletingName="VW_TaiLieuChoMuonRowDeleting" msprop:Generator_RowChangingName="VW_TaiLieuChoMuonRowChanging" msprop:Generator_RowEvHandlerName="VW_TaiLieuChoMuonRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_TaiLieuChoMuonRowDeleted" msprop:Generator_UserTableName="VW_TaiLieuChoMuon" msprop:Generator_RowChangedName="VW_TaiLieuChoMuonRowChanged" msprop:Generator_RowEvArgName="VW_TaiLieuChoMuonRowChangeEvent" msprop:Generator_RowClassName="VW_TaiLieuChoMuonRow">
+        <xs:element name="VW_TaiLieuChoMuon" msprop:Generator_TableClassName="VW_TaiLieuChoMuonDataTable" msprop:Generator_TableVarName="tableVW_TaiLieuChoMuon" msprop:Generator_RowChangedName="VW_TaiLieuChoMuonRowChanged" msprop:Generator_TablePropName="VW_TaiLieuChoMuon" msprop:Generator_RowDeletingName="VW_TaiLieuChoMuonRowDeleting" msprop:Generator_RowChangingName="VW_TaiLieuChoMuonRowChanging" msprop:Generator_RowEvHandlerName="VW_TaiLieuChoMuonRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_TaiLieuChoMuonRowDeleted" msprop:Generator_RowClassName="VW_TaiLieuChoMuonRow" msprop:Generator_UserTableName="VW_TaiLieuChoMuon" msprop:Generator_RowEvArgName="VW_TaiLieuChoMuonRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MaTaiLieu" msprop:Generator_ColumnVarNameInTable="columnMaTaiLieu" msprop:Generator_ColumnPropNameInRow="MaTaiLieu" msprop:Generator_ColumnPropNameInTable="MaTaiLieuColumn" msprop:Generator_UserColumnName="MaTaiLieu">
@@ -135,7 +135,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VW_SoLanMuon" msprop:Generator_TableClassName="VW_SoLanMuonDataTable" msprop:Generator_TableVarName="tableVW_SoLanMuon" msprop:Generator_TablePropName="VW_SoLanMuon" msprop:Generator_RowDeletingName="VW_SoLanMuonRowDeleting" msprop:Generator_RowChangingName="VW_SoLanMuonRowChanging" msprop:Generator_RowEvHandlerName="VW_SoLanMuonRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_SoLanMuonRowDeleted" msprop:Generator_UserTableName="VW_SoLanMuon" msprop:Generator_RowChangedName="VW_SoLanMuonRowChanged" msprop:Generator_RowEvArgName="VW_SoLanMuonRowChangeEvent" msprop:Generator_RowClassName="VW_SoLanMuonRow">
+        <xs:element name="VW_SoLanMuon" msprop:Generator_TableClassName="VW_SoLanMuonDataTable" msprop:Generator_TableVarName="tableVW_SoLanMuon" msprop:Generator_RowChangedName="VW_SoLanMuonRowChanged" msprop:Generator_TablePropName="VW_SoLanMuon" msprop:Generator_RowDeletingName="VW_SoLanMuonRowDeleting" msprop:Generator_RowChangingName="VW_SoLanMuonRowChanging" msprop:Generator_RowEvHandlerName="VW_SoLanMuonRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_SoLanMuonRowDeleted" msprop:Generator_RowClassName="VW_SoLanMuonRow" msprop:Generator_UserTableName="VW_SoLanMuon" msprop:Generator_RowEvArgName="VW_SoLanMuonRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MaTheLoai" msprop:Generator_ColumnVarNameInTable="columnMaTheLoai" msprop:Generator_ColumnPropNameInRow="MaTheLoai" msprop:Generator_ColumnPropNameInTable="MaTheLoaiColumn" msprop:Generator_UserColumnName="MaTheLoai">
@@ -156,7 +156,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VW_TaiLieuMuonNhieuNhat" msprop:Generator_TableClassName="VW_TaiLieuMuonNhieuNhatDataTable" msprop:Generator_TableVarName="tableVW_TaiLieuMuonNhieuNhat" msprop:Generator_TablePropName="VW_TaiLieuMuonNhieuNhat" msprop:Generator_RowDeletingName="VW_TaiLieuMuonNhieuNhatRowDeleting" msprop:Generator_RowChangingName="VW_TaiLieuMuonNhieuNhatRowChanging" msprop:Generator_RowEvHandlerName="VW_TaiLieuMuonNhieuNhatRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_TaiLieuMuonNhieuNhatRowDeleted" msprop:Generator_UserTableName="VW_TaiLieuMuonNhieuNhat" msprop:Generator_RowChangedName="VW_TaiLieuMuonNhieuNhatRowChanged" msprop:Generator_RowEvArgName="VW_TaiLieuMuonNhieuNhatRowChangeEvent" msprop:Generator_RowClassName="VW_TaiLieuMuonNhieuNhatRow">
+        <xs:element name="VW_TaiLieuMuonNhieuNhat" msprop:Generator_TableClassName="VW_TaiLieuMuonNhieuNhatDataTable" msprop:Generator_TableVarName="tableVW_TaiLieuMuonNhieuNhat" msprop:Generator_RowChangedName="VW_TaiLieuMuonNhieuNhatRowChanged" msprop:Generator_TablePropName="VW_TaiLieuMuonNhieuNhat" msprop:Generator_RowDeletingName="VW_TaiLieuMuonNhieuNhatRowDeleting" msprop:Generator_RowChangingName="VW_TaiLieuMuonNhieuNhatRowChanging" msprop:Generator_RowEvHandlerName="VW_TaiLieuMuonNhieuNhatRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_TaiLieuMuonNhieuNhatRowDeleted" msprop:Generator_RowClassName="VW_TaiLieuMuonNhieuNhatRow" msprop:Generator_UserTableName="VW_TaiLieuMuonNhieuNhat" msprop:Generator_RowEvArgName="VW_TaiLieuMuonNhieuNhatRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MaTaiLieu" msprop:Generator_ColumnVarNameInTable="columnMaTaiLieu" msprop:Generator_ColumnPropNameInRow="MaTaiLieu" msprop:Generator_ColumnPropNameInTable="MaTaiLieuColumn" msprop:Generator_UserColumnName="MaTaiLieu">
@@ -185,7 +185,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="VW_TaiLieuQuaHan" msprop:Generator_TableClassName="VW_TaiLieuQuaHanDataTable" msprop:Generator_TableVarName="tableVW_TaiLieuQuaHan" msprop:Generator_TablePropName="VW_TaiLieuQuaHan" msprop:Generator_RowDeletingName="VW_TaiLieuQuaHanRowDeleting" msprop:Generator_RowChangingName="VW_TaiLieuQuaHanRowChanging" msprop:Generator_RowEvHandlerName="VW_TaiLieuQuaHanRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_TaiLieuQuaHanRowDeleted" msprop:Generator_UserTableName="VW_TaiLieuQuaHan" msprop:Generator_RowChangedName="VW_TaiLieuQuaHanRowChanged" msprop:Generator_RowEvArgName="VW_TaiLieuQuaHanRowChangeEvent" msprop:Generator_RowClassName="VW_TaiLieuQuaHanRow">
+        <xs:element name="VW_TaiLieuQuaHan" msprop:Generator_TableClassName="VW_TaiLieuQuaHanDataTable" msprop:Generator_TableVarName="tableVW_TaiLieuQuaHan" msprop:Generator_RowChangedName="VW_TaiLieuQuaHanRowChanged" msprop:Generator_TablePropName="VW_TaiLieuQuaHan" msprop:Generator_RowDeletingName="VW_TaiLieuQuaHanRowDeleting" msprop:Generator_RowChangingName="VW_TaiLieuQuaHanRowChanging" msprop:Generator_RowEvHandlerName="VW_TaiLieuQuaHanRowChangeEventHandler" msprop:Generator_RowDeletedName="VW_TaiLieuQuaHanRowDeleted" msprop:Generator_RowClassName="VW_TaiLieuQuaHanRow" msprop:Generator_UserTableName="VW_TaiLieuQuaHan" msprop:Generator_RowEvArgName="VW_TaiLieuQuaHanRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="MaDocGia" msprop:Generator_ColumnVarNameInTable="columnMaDocGia" msprop:Generator_ColumnPropNameInRow="MaDocGia" msprop:Generator_ColumnPropNameInTable="MaDocGiaColumn" msprop:Generator_UserColumnName="MaDocGia">
