@@ -66,6 +66,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DuLieuPhanMem.cs">
+      <DependentUpon>DuLieuPhanMem.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DuLieuPhanMem.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DuLieuPhanMem.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FormDangNhap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +114,21 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\SoLanMuonTheoTheLoai.rdlc" />
+    <EmbeddedResource Include="Resources\TaiLieuDangMuon.rdlc" />
+    <EmbeddedResource Include="Resources\TaiLieuQuaHan.rdlc" />
+    <EmbeddedResource Include="Resources\Top10TaiLieuMuonNhieuNhat.rdlc" />
+    <None Include="DuLieuPhanMem.xsc">
+      <DependentUpon>DuLieuPhanMem.xsd</DependentUpon>
+    </None>
+    <None Include="DuLieuPhanMem.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DuLieuPhanMem.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DuLieuPhanMem.xss">
+      <DependentUpon>DuLieuPhanMem.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -120,9 +143,7 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Resources\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll" />

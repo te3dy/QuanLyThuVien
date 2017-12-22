@@ -35,6 +35,14 @@ namespace Windows_Form_Project
 
         private void FormMain_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'duLieuPhanMem.VW_TaiLieuQuaHan' table. You can move, or remove it, as needed.
+            this.vW_TaiLieuQuaHanTableAdapter.Fill(this.duLieuPhanMem.VW_TaiLieuQuaHan);
+            // TODO: This line of code loads data into the 'duLieuPhanMem.VW_SoLanMuon' table. You can move, or remove it, as needed.
+            this.vW_SoLanMuonTableAdapter.Fill(this.duLieuPhanMem.VW_SoLanMuon);
+            // TODO: This line of code loads data into the 'duLieuPhanMem.VW_TaiLieuChoMuon' table. You can move, or remove it, as needed.
+            this.vW_TaiLieuChoMuonTableAdapter.Fill(this.duLieuPhanMem.VW_TaiLieuChoMuon);
+            // TODO: This line of code loads data into the 'duLieuPhanMem.VW_TaiLieuMuonNhieuNhat' table. You can move, or remove it, as needed.
+            this.vW_TaiLieuMuonNhieuNhatTableAdapter.Fill(this.duLieuPhanMem.VW_TaiLieuMuonNhieuNhat);
             tabMenu.SelectedTab = null;
         }
 
@@ -644,5 +652,24 @@ namespace Windows_Form_Project
             //timer.Stop();
         }
 
+        private void subTabThongKe6_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if(e.TabPage == tabTaiLieuMuonQuaHan6)
+            {
+                this.reprotTaiLieuMuonQuaHan6.RefreshReport();
+            }
+            if(e.TabPage == tabTaiLieuDangMuon6)
+            {
+                this.reportTaiLieuDangMuon6.RefreshReport();
+            }
+            if(e.TabPage == tabTaiLieuMuonNhieuNhat6)
+            {
+                this.reportTop10MuonNhieu6.RefreshReport();
+            }
+            if(e.TabPage == tabMuonTheoTheLoai6)
+            {
+                this.reportMuonTheoTheLoai6.RefreshReport();
+            }
+        }
     }
 }

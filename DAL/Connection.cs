@@ -25,7 +25,7 @@ namespace DAL
          * 
          */
         //private String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection"].ConnectionString;
-        private String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection2"].ConnectionString;
+        private String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection4"].ConnectionString;
         //private String connectionString = ConfigurationManager.ConnectionStrings["DatabaseConnection3"].ConnectionString;
         /**
          * 
