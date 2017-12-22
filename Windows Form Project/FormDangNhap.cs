@@ -54,10 +54,14 @@ namespace Windows_Form_Project
                     }
 
                     // Phân quyền
-                    formMain = new FormMain(this, txtTaiKhoan.Text, txtMatKhau.Text);
                     if (dangNhapBO.Quyen(txtTaiKhoan.Text, txtMatKhau.Text).Equals("User"))
                     {
+                        formMain = new FormMain(this, txtTaiKhoan.Text, txtMatKhau.Text);
                         formMain.QuyenUser();
+                    }
+                    if (dangNhapBO.Quyen(txtTaiKhoan.Text, txtMatKhau.Text).Equals("Admin"))
+                    {
+                        formMain = new FormMain(this, txtTaiKhoan.Text, txtMatKhau.Text);
                     }
                     formMain.Show();
                 }

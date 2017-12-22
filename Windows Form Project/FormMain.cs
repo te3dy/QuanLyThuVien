@@ -151,8 +151,8 @@ namespace Windows_Form_Project
         {
             try
             {
-                TaiLieuDTO taiLieuDTO = new TaiLieuDTO(txtMaTaiLieu1.Text,txtTenTaiLieu1.Text,txtMaTheLoai1.Text,10,txtNhaXuatBan1.Text
-                    ,20,txtTacGia1.Text);
+                TaiLieuDTO taiLieuDTO = new TaiLieuDTO(txtMaTaiLieu1.Text, txtTenTaiLieu1.Text, txtMaTheLoai1.Text, 10, txtNhaXuatBan1.Text
+                    , 20, txtTacGia1.Text);
                 taiLieuBO.ThemTaiLieu(taiLieuDTO);
             }
             catch (Exception ex)
@@ -192,16 +192,20 @@ namespace Windows_Form_Project
             try
             {
                 DataTable dataTable = docGiaBO.XemDocGia();
-                //dataTable.Columns.Add("Giới Tính", typeof(string));
+                dataTable.Columns.Add("Giới Tính");
+                foreach (DataRow row in dataTable.Rows)
+                {
+                    if (row["GioiTinh"].ToString() == "True")
+                    {
+                        row["Giới Tính"] = "Nam";
+                    }
+                    if (row["GioiTinh"].ToString() == "False")
+                    {
+                        row["Giới Tính"] = "Nữ";
+                    }
+                }
+                dataTable.Columns.Remove("GioiTinh");
                 dataDocGia2.DataSource = dataTable;
-                //for (int i = 0; i < dataTable.Rows.Count; i++)
-                //{
-                //    if (dataDocGia2.Rows[i].Cells["GioiTinh"].Value.ToString() == "True")
-                //    {
-                //        dataDocGia2.Rows[i].Cells[3].Value = "Nam";
-                //        //dataDocGia2.UpdateCellValue(i, );
-                //    }
-                //}
             }
             catch (SqlException sex)
             {
@@ -308,18 +312,18 @@ namespace Windows_Form_Project
             int i = dataDocGia2.CurrentRow.Index;
             txtMaDocGia2.Text = dataDocGia2.Rows[i].Cells[0].Value.ToString();
             txtHoTen2.Text = dataDocGia2.Rows[i].Cells[1].Value.ToString();
-            if(dataDocGia2.Rows[i].Cells[2].Value.ToString() == "True")
+            if (dataDocGia2.Rows[i].Cells[6].Value.ToString() == "Nam")
             {
                 rbGioiTinhNam2.Checked = true;
             }
-            if(dataDocGia2.Rows[i].Cells[2].Value.ToString() == "False")
+            if (dataDocGia2.Rows[i].Cells[6].Value.ToString() == "Nữ")
             {
                 rbGioiTinhNu2.Checked = true;
             }
-            dtNgaySinh2.Text = dataDocGia2.Rows[i].Cells[3].Value.ToString();
-            cbDoiTuong2.Text = dataDocGia2.Rows[i].Cells[4].Value.ToString();
-            dtNgayCap2.Text = dataDocGia2.Rows[i].Cells[5].Value.ToString();
-            dtNgayHetHan2.Text = dataDocGia2.Rows[i].Cells[6].Value.ToString();
+            dtNgaySinh2.Text = dataDocGia2.Rows[i].Cells[2].Value.ToString();
+            cbDoiTuong2.Text = dataDocGia2.Rows[i].Cells[3].Value.ToString();
+            dtNgayCap2.Text = dataDocGia2.Rows[i].Cells[4].Value.ToString();
+            dtNgayHetHan2.Text = dataDocGia2.Rows[i].Cells[5].Value.ToString();
 
         }
 
@@ -380,7 +384,8 @@ namespace Windows_Form_Project
         {
             try
             {
-                dataNhanVien4.DataSource = nhanVienBO.XemNhanVien();
+                DataTable dataTable = nhanVienBO.XemNhanVien();
+                dataNhanVien4.DataSource = dataTable;
             }
             catch (SqlException sex)
             {
@@ -467,8 +472,11 @@ namespace Windows_Form_Project
 
         private void subTabDanhMuc0_Selecting(object sender, TabControlCancelEventArgs e)
         {
+            // Mở tab khi tab được chọn
             if (e.TabPage == tabNhanVien4)
             {
+                DataTable dataTable = nhanVienBO.XemNhanVien();
+                AutoComplete(txtMaNhanVien4, dataTable, "MaNhanVien");
                 XemNhanVien();
             }
             if (e.TabPage == tabDocGia2)
@@ -488,25 +496,118 @@ namespace Windows_Form_Project
         #region Tab 7: Tìm Kiếm
 
         #region Tab 8: Tài Liệu
+
+        // Lọc tên cột tài liệu từ combobox để truy vấn
+        private string TenCotTaiLieu(string comboBoxText)
+        {
+            string tenCot = "";
+            if (comboBoxText == "Mã Tài Liệu")
+            {
+                tenCot = "MaTaiLieu";
+            }
+            if (comboBoxText == "Tên Tài Liệu")
+            {
+                tenCot = "TenTaiLieu";
+            }
+            if (comboBoxText == "Tên Thể Loại")
+            {
+                tenCot = "MaTheLoai";
+            }
+            if (comboBoxText == "Nhà Xuất Bản")
+            {
+                tenCot = "NhaXuatBan";
+            }
+            if (comboBoxText == "Năm Xuất Bản")
+            {
+                tenCot = "NamXuatBan";
+            }
+            if (comboBoxText == "Tác Giả")
+            {
+                tenCot = "TacGia";
+            }
+            return tenCot;
+        }
+
+        // Lọc các từ nối AND OR từ combobox
+        private string TuNoi(string comboBoxText)
+        {
+            string tuNoi = "";
+            if (comboBoxText == "Và")
+            {
+                tuNoi = "AND";
+            }
+            if (comboBoxText == "Hoặc")
+            {
+                tuNoi = "OR";
+            }
+            return tuNoi;
+        }
+
+        private void btnTimKiem8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DataTable dataTable = taiLieuBO.TimTaiLieu(TenCotTaiLieu(cbTimKiem8.Text), txtTimKiem8.Text);
+                dataTimKiem8.DataSource = dataTable;
+            }
+            catch
+            {
+                txtStatus.Text = "Lỗi Tìm Kiếm Tài Liệu";
+            }
+        }
+
+        private void btnTimKiemNangCao8_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                string col1 = TenCotTaiLieu(cbTimKiemNangCao18.Text);
+                string col2 = TenCotTaiLieu(cbTimKiemNangCao28.Text);
+                string col3 = TenCotTaiLieu(cbTimKiemNangCao38.Text);
+                string link1 = TuNoi(cbTuyChonTimKiemNangCao18.Text);
+                string link2 = TuNoi(cbTuyChonTimKiemNangCao28.Text);
+                string info1 = txtTimKiemNangCao18.Text;
+                string info2 = txtTimKiemNangCao28.Text;
+                string info3 = txtTimKiemNangCao38.Text;
+                //DataTable dataTable = taiLieuBO.TimTaiLieu(col1, info1, link1, col2, info2, link2, col3, info3);
+                DataTable dataTable1 = taiLieuBO.XemTaiLieu();
+                string subCommand1 = col1 + "='" + info1 + "'";
+                string subCommand2 = link1 + " " + col2 + "='" + info2 + "'";
+                string subCommand3 = link2 + " " + col3 + "='" + info3 + "'";
+                string command = subCommand1;
+                if (!String.IsNullOrWhiteSpace(col2) && !String.IsNullOrWhiteSpace(col3))
+                {
+                    command += " " + subCommand2 + " " + subCommand3;
+                }
+                if (String.IsNullOrWhiteSpace(col2) && !String.IsNullOrWhiteSpace(col3))
+                {
+                    command += " " + subCommand3;
+                }
+                if (!String.IsNullOrWhiteSpace(col2) && String.IsNullOrWhiteSpace(col3))
+                {
+                    command += " " + subCommand2;
+                }
+                DataRow[] dataRow = dataTable1.Select(command);
+                DataTable dataTable2 = taiLieuBO.XemTaiLieu();
+                dataTable2.Clear();
+                foreach (DataRow row in dataRow)
+                {
+                    dataTable2.Rows.Add(row.ItemArray);
+                }
+                dataTimKiem8.DataSource = dataTable2;
+                txtStatus.Text = "";
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = "Lỗi Tìm Kiếm Tài Liệu";
+            }
+        }
+
         #endregion
 
         #region Tab 9: Phiếu Mượn
         #endregion
 
         #endregion
-
-        public void QuyenDocGia()
-        {
-            tabIconList.Images.RemoveAt(0);
-            tabIconList.Images.RemoveAt(0);
-            tabIconList.Images.RemoveAt(0);
-            tabMenu.TabPages.Remove(tabDanhMuc0);
-            tabMenu.TabPages.Remove(tabMuonTra5);
-            tabMenu.TabPages.Remove(tabThongKe6);
-            subTabTimKiem7.TabPages.Remove(tabTimKiemPhieuMuon9);
-            menuBar.Enabled = false;
-            đổiMậtKhẩuToolStripMenuItem.Enabled = false;
-        }
 
         public void QuyenUser()
         {
@@ -525,7 +626,6 @@ namespace Windows_Form_Project
             }
         }
 
-
         private void AutoComplete(TextBox textBox, DataTable dataTable, string tenCot)
         {
             textBox.AutoCompleteMode = AutoCompleteMode.SuggestAppend;
@@ -535,7 +635,14 @@ namespace Windows_Form_Project
             {
                 auto.Add(dataTable.Rows[i].Field<string>(tenCot));
             }
-            txtTenTaiLieu1.AutoCompleteCustomSource = auto;
+            textBox.AutoCompleteCustomSource = auto;
         }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            //txtStatus.Visible = false;
+            //timer.Stop();
+        }
+
     }
 }

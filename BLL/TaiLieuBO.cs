@@ -12,12 +12,14 @@ namespace BLL
     /**
      * 
      */
-    public class TaiLieuBO {
+    public class TaiLieuBO
+    {
 
         /**
          * 
          */
-        public TaiLieuBO() {
+        public TaiLieuBO()
+        {
         }
 
         /**
@@ -29,7 +31,8 @@ namespace BLL
         /**
          * @return
          */
-        public DataTable XemTaiLieu() {
+        public DataTable XemTaiLieu()
+        {
             // TODO implement here
             try
             {
@@ -45,22 +48,24 @@ namespace BLL
         /**
          * @param taiLieuDTO
          */
-        public void ThemTaiLieu(TaiLieuDTO taiLieuDTO) {
-        // TODO implement here
-        try
+        public void ThemTaiLieu(TaiLieuDTO taiLieuDTO)
         {
-            taiLieuDAO.ThemTaiLieu(taiLieuDTO);
+            // TODO implement here
+            try
+            {
+                taiLieuDAO.ThemTaiLieu(taiLieuDTO);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
-        catch (Exception ex)
-        {
-            throw ex;
-        }
-    }
 
         /**
          * @param taiLieuDTO
          */
-        public void SuaTaiLieu(TaiLieuDTO taiLieuDTO) {
+        public void SuaTaiLieu(TaiLieuDTO taiLieuDTO)
+        {
             // TODO implement here
             try
             {
@@ -75,25 +80,46 @@ namespace BLL
         /**
          * 
          */
-        public void XoaTaiLieu(string maTaiLieu) {
-        // TODO implement here
+        public void XoaTaiLieu(string maTaiLieu)
+        {
+            // TODO implement here
             try
             {
-            taiLieuDAO.XoaTaiLieu(maTaiLieu);
+                taiLieuDAO.XoaTaiLieu(maTaiLieu);
             }
             catch (Exception ex)
             {
-            throw ex;
+                throw ex;
             }
-    }
+        }
 
         /**
          * @return
          */
-        public DataTable TimTaiLieu() {
-            // TODO implement here
-            return null;
+        public DataTable TimTaiLieu(string col, string info)
+        {
+            try
+            {
+                dataTable = taiLieuDAO.TimTaiLieu(col, info);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dataTable;
         }
 
+        public DataTable TimTaiLieu(string col1, string info1, string link1, string col2, string info2, string link2, string col3, string info3)
+        {
+            try
+            {
+                dataTable = taiLieuDAO.TimTaiLieu(col1, info1, link1, col2, info2, link2, col3, info3);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+            return dataTable;
+        }
     }
 }
