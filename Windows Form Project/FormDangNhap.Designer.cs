@@ -34,7 +34,6 @@
             this.txtTaiKhoan = new System.Windows.Forms.TextBox();
             this.txtMatKhau = new System.Windows.Forms.TextBox();
             this.btnDangNhap = new System.Windows.Forms.Button();
-            this.btnDocGia = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.cbDangNhap = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
@@ -80,7 +79,7 @@
             // 
             this.btnDangNhap.AutoSize = true;
             this.btnDangNhap.Image = ((System.Drawing.Image)(resources.GetObject("btnDangNhap.Image")));
-            this.btnDangNhap.Location = new System.Drawing.Point(64, 152);
+            this.btnDangNhap.Location = new System.Drawing.Point(135, 152);
             this.btnDangNhap.Name = "btnDangNhap";
             this.btnDangNhap.Size = new System.Drawing.Size(116, 38);
             this.btnDangNhap.TabIndex = 4;
@@ -88,18 +87,6 @@
             this.btnDangNhap.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnDangNhap.UseVisualStyleBackColor = true;
             this.btnDangNhap.Click += new System.EventHandler(this.btnDangNhap_Click);
-            // 
-            // btnDocGia
-            // 
-            this.btnDocGia.AutoSize = true;
-            this.btnDocGia.Image = ((System.Drawing.Image)(resources.GetObject("btnDocGia.Image")));
-            this.btnDocGia.Location = new System.Drawing.Point(196, 152);
-            this.btnDocGia.Name = "btnDocGia";
-            this.btnDocGia.Size = new System.Drawing.Size(127, 38);
-            this.btnDocGia.TabIndex = 5;
-            this.btnDocGia.Text = "Chế Độ Độc Giả";
-            this.btnDocGia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnDocGia.UseVisualStyleBackColor = true;
             // 
             // label3
             // 
@@ -131,7 +118,6 @@
             this.ClientSize = new System.Drawing.Size(384, 203);
             this.Controls.Add(this.cbDangNhap);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.btnDocGia);
             this.Controls.Add(this.btnDangNhap);
             this.Controls.Add(this.txtMatKhau);
             this.Controls.Add(this.txtTaiKhoan);
@@ -155,7 +141,6 @@
         private System.Windows.Forms.TextBox txtTaiKhoan;
         private System.Windows.Forms.TextBox txtMatKhau;
         private System.Windows.Forms.Button btnDangNhap;
-        private System.Windows.Forms.Button btnDocGia;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.CheckBox cbDangNhap;
     }

@@ -96,30 +96,46 @@ namespace BLL
         /**
          * @return
          */
-        public DataTable TimTaiLieu(string col, string info)
+        public DataTable TimTaiLieu()
         {
-            try
-            {
-                dataTable = taiLieuDAO.TimTaiLieu(col, info);
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return dataTable;
+            return null;
         }
 
         public DataTable TimTaiLieu(string col1, string info1, string link1, string col2, string info2, string link2, string col3, string info3)
         {
+            DataTable dataTimKiem;
             try
             {
-                dataTable = taiLieuDAO.TimTaiLieu(col1, info1, link1, col2, info2, link2, col3, info3);
+                DataTable dataTaiLieu = XemTaiLieu();
+                string subCommand1 = col1 + "='" + info1 + "'";
+                string subCommand2 = link1 + " " + col2 + "='" + info2 + "'";
+                string subCommand3 = link2 + " " + col3 + "='" + info3 + "'";
+                string command = subCommand1;
+                if (!String.IsNullOrWhiteSpace(link1) && !String.IsNullOrWhiteSpace(link2))
+                {
+                    command += " " + subCommand2 + " " + subCommand3;
+                }
+                if (String.IsNullOrWhiteSpace(link1) && !String.IsNullOrWhiteSpace(link2))
+                {
+                    command += " " + subCommand3;
+                }
+                if (!String.IsNullOrWhiteSpace(link1) && String.IsNullOrWhiteSpace(link2))
+                {
+                    command += " " + subCommand2;
+                }
+                DataRow[] dataRow = dataTaiLieu.Select(command);
+                dataTimKiem = XemTaiLieu();
+                dataTimKiem.Clear();
+                foreach (DataRow row in dataRow)
+                {
+                    dataTimKiem.Rows.Add(row.ItemArray);
+                }
             }
             catch (Exception ex)
             {
                 throw ex;
             }
-            return dataTable;
+            return dataTimKiem;
         }
     }
 }

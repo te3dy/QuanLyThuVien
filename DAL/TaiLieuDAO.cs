@@ -130,57 +130,8 @@ namespace DAL
          */
         public DataTable TimTaiLieu(string col, string info)
         {
-            try
-            {
-                connection.Open();
-                dataTable = new DataTable();
-                command = "SELECT * FROM TaiLieu WHERE " + col + "=@" + col;
-                sqlCommand = new SqlCommand(command, connection.sqlConnection);
-                sqlCommand.Parameters.AddWithValue(col, info);
-                dataTable.Load(sqlCommand.ExecuteReader());
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return dataTable;
+            return null;
         }
 
-        public DataTable TimTaiLieu(string col1, string info1, string link1, string col2, string info2, string link2, string col3, string info3)
-        {
-            try
-            {
-                connection.Open();
-                dataTable = new DataTable();
-                string subCommand1 = "SELECT * FROM TaiLieu WHERE " + col1 + "=@" + col1;
-                string subCommand2 = link1 + " " + col2 + "=@" + col2;
-                string subCommand3 = link2 + " " + col3 + "=@" + col3;
-                command = subCommand1;
-                if (!String.IsNullOrWhiteSpace(col2) && !String.IsNullOrWhiteSpace(col3))
-                {
-                    command += " " + subCommand2 + " " + subCommand3;
-                }
-                if (String.IsNullOrWhiteSpace(col2) && !String.IsNullOrWhiteSpace(col3))
-                {
-                    command += " " + subCommand3;
-                }
-                if (!String.IsNullOrWhiteSpace(col2) && String.IsNullOrWhiteSpace(col3))
-                {
-                    command += " " + subCommand2;
-                }
-                sqlCommand = new SqlCommand(command, connection.sqlConnection);
-                sqlCommand.Parameters.AddWithValue(col1, info1);
-                sqlCommand.Parameters.AddWithValue(col2, info2);
-                sqlCommand.Parameters.AddWithValue(col3, info3);
-                dataTable.Load(sqlCommand.ExecuteReader());
-                connection.Close();
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-            return dataTable;
-        }
     }
 }

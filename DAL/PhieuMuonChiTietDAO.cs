@@ -7,35 +7,38 @@ using System.Data.SqlClient;
 using DTO;
 using System.Data;
 
-namespace DAL{
+namespace DAL
+{
     /**
      * 
      */
-    public class PhieuMuonChiTietDAO {
+    public class PhieuMuonChiTietDAO
+    {
 
         /**
          * 
          */
-        public PhieuMuonChiTietDAO() {
+        public PhieuMuonChiTietDAO()
+        {
         }
 
         /**
          * 
          */
-        private Connection connection=new Connection();
+        private Connection connection = new Connection();
 
         private SqlCommand command;
         string querry = "";
         /**
          * @return
          */
-        public DataTable XemPhieuMuonChiTiet(string MaPhieuMuon) {
+        public DataTable XemPhieuMuonChiTiet(string MaPhieuMuon)
+        {
             DataTable dt = new DataTable();
-            querry = "select * from PhieuMuonChiTiet where MaPhieuMuon=@MaDocGia";
+            querry = "select * from PhieuMuonChiTieu where MaPhieuMuon=@MaPhieuMuon";
             connection.Open();
             command = new SqlCommand(querry, connection.sqlConnection);
-            command.Parameters.AddWithValue("MaPhieuMuon",MaPhieuMuon);
-            // TODO implement here
+            command.Parameters.AddWithValue("MaPhieuMuon", MaPhieuMuon);
             dt.Load(command.ExecuteReader());
             connection.Close();
             return dt;
@@ -44,8 +47,9 @@ namespace DAL{
         /**
          * @param phieuMuonChiTiet
          */
-        public void ThemPhieuMuonChiTiet(PhieuMuonChiTietDTO phieuMuonChiTiet) {
-            querry = "insert PhieuMuonChiTiet values(@MaPhieuMuon,@MaTaiLieu,@SoLuongMuon,@NgayTra)";
+        public void ThemPhieuMuonChiTiet(PhieuMuonChiTietDTO phieuMuonChiTiet)
+        {
+            querry = "insert PhieuMuonChiTieu values(@MaPhieuMuon,@MaTaiLieu,@SoLuongMuon,@NgayTra)";
             connection.Open();
             command = new SqlCommand(querry, connection.sqlConnection);
             command.Parameters.AddWithValue("MaPhieuMuon", phieuMuonChiTiet.MaPhieuMuon);
@@ -61,8 +65,9 @@ namespace DAL{
         /**
          * @param phieuMuonChiTiet
          */
-        public void SuaPhieuMuonChiTiet(PhieuMuonChiTietDTO phieuMuonChiTiet) {
-            querry = "update PhieuMuonChiTiet set MaTaiLieu=@MaTaiLieu,SoLuongMuon=@SoLuongMuon,NgayTra=@NgayTra where MaPhieuMuon=@MaPhieuMuon";
+        public void SuaPhieuMuonChiTiet(PhieuMuonChiTietDTO phieuMuonChiTiet)
+        {
+            querry = "update PhieuMuonChiTieu set MaTaiLieu=@MaTaiLieu,SoLuongMuon=@SoLuongMuon,NgayTra=@NgayTra where MaPhieuMuon=@MaPhieuMuon";
             connection.Open();
             command = new SqlCommand(querry, connection.sqlConnection);
             command.Parameters.AddWithValue("MaPhieuMuon", phieuMuonChiTiet.MaPhieuMuon);
@@ -80,8 +85,9 @@ namespace DAL{
         /**
          * 
          */
-        public void XoaPhieuMuonChiTiet(string MaPhieuMuon) {
-            querry = "delete PhieuMuonChiTiet where MaPhieuMuon=@MaPhieuMuon ";
+        public void XoaPhieuMuonChiTiet(string MaPhieuMuon)
+        {
+            querry = "delete PhieuMuonChiTieu where MaPhieuMuon=@MaPhieuMuon ";
             connection.Open();
             command = new SqlCommand(querry, connection.sqlConnection);
             command.Parameters.AddWithValue("MaPhieuMuon", MaPhieuMuon);
@@ -94,7 +100,8 @@ namespace DAL{
         /**
          * @return
          */
-        public DataTable TimPhieuMuonChiTiet() {
+        public DataTable TimPhieuMuonChiTiet()
+        {
             // TODO implement here
             return null;
         }

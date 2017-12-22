@@ -23,7 +23,7 @@ namespace BLL
         /**
          * 
          */
-        private PhieuMuonChiTietDAO phieuMuonChiTietDAO;
+        private PhieuMuonChiTietDAO phieuMuonChiTietDAO = new PhieuMuonChiTietDAO();
 
         /**
          * @return

@@ -16,10 +16,13 @@ namespace Windows_Form_Project
     public partial class FormMain : Form
     {
         Form formDangNhap;
+        DangNhapBO dangNhapBO = new DangNhapBO();
         NhanVienBO nhanVienBO = new NhanVienBO();
         DocGiaBO docGiaBO = new DocGiaBO();
         TaiLieuBO taiLieuBO = new TaiLieuBO();
         TheLoaiBO theLoaiBO = new TheLoaiBO();
+        PhieuMuonBO phieuMuonBO = new PhieuMuonBO();
+        PhieuMuonChiTietBO phieuMuonChiTietBO = new PhieuMuonChiTietBO();
         string taiKhoan;
         string matKhau;
 
@@ -35,14 +38,15 @@ namespace Windows_Form_Project
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-            // TODO: This line of code loads data into the 'duLieuPhanMem.VW_TaiLieuQuaHan' table. You can move, or remove it, as needed.
-            this.vW_TaiLieuQuaHanTableAdapter.Fill(this.duLieuPhanMem.VW_TaiLieuQuaHan);
-            // TODO: This line of code loads data into the 'duLieuPhanMem.VW_SoLanMuon' table. You can move, or remove it, as needed.
-            this.vW_SoLanMuonTableAdapter.Fill(this.duLieuPhanMem.VW_SoLanMuon);
-            // TODO: This line of code loads data into the 'duLieuPhanMem.VW_TaiLieuChoMuon' table. You can move, or remove it, as needed.
-            this.vW_TaiLieuChoMuonTableAdapter.Fill(this.duLieuPhanMem.VW_TaiLieuChoMuon);
-            // TODO: This line of code loads data into the 'duLieuPhanMem.VW_TaiLieuMuonNhieuNhat' table. You can move, or remove it, as needed.
-            this.vW_TaiLieuMuonNhieuNhatTableAdapter.Fill(this.duLieuPhanMem.VW_TaiLieuMuonNhieuNhat);
+            try
+            {
+                DataTable dataTable = dangNhapBO.ThongTinDangNhap(taiKhoan, matKhau);
+                tênNhânViênToolStripMenuItem.Text = dataTable.Rows[0]["HoTen"].ToString();
+            }
+            catch
+            {
+
+            }
             tabMenu.SelectedTab = null;
         }
 
@@ -149,6 +153,7 @@ namespace Windows_Form_Project
             {
                 DataTable dataTable = taiLieuBO.XemTaiLieu();
                 dataTaiLieu1.DataSource = dataTable;
+                txtStatus.Text = "";
             }
             catch (Exception ex)
             {
@@ -159,36 +164,61 @@ namespace Windows_Form_Project
         {
             try
             {
-                TaiLieuDTO taiLieuDTO = new TaiLieuDTO(txtMaTaiLieu1.Text, txtTenTaiLieu1.Text, txtMaTheLoai1.Text, 10, txtNhaXuatBan1.Text
-                    , 20, txtTacGia1.Text);
+                TaiLieuDTO taiLieuDTO = new TaiLieuDTO(txtMaTaiLieu1.Text, txtTenTaiLieu1.Text, txtMaTheLoai1.Text, int.Parse(txtSoLuong1.Text), txtNhaXuatBan1.Text
+                    , int.Parse(txtNamXuatBan1.Text), txtTacGia1.Text);
                 taiLieuBO.ThemTaiLieu(taiLieuDTO);
+                txtStatus.Text = "";
             }
             catch (Exception ex)
             {
                 txtStatus.Text = "Lỗi ghi thông tin !";
             }
-
             XemTaiLieu();
         }
 
         private void btnSuaTaiLieu1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                TaiLieuDTO taiLieuDTO = new TaiLieuDTO(txtMaTaiLieu1.Text, txtTenTaiLieu1.Text, txtMaTheLoai1.Text, int.Parse(txtSoLuong1.Text), txtNhaXuatBan1.Text
+                    , int.Parse(txtNamXuatBan1.Text), txtTacGia1.Text);
+                taiLieuBO.SuaTaiLieu(taiLieuDTO);
+                txtStatus.Text = "";
+            }
+            catch
+            {
+                txtStatus.Text = "Lỗi sửa tài liệu";
+            }
         }
 
         private void btnXoaTaiLieu1_Click(object sender, EventArgs e)
         {
-
+            try
+            {
+                taiLieuBO.XoaTaiLieu(txtMaTaiLieu1.Text);
+            }
+            catch
+            {
+                txtStatus.Text = "Lỗi xóa tài liệu";
+            }
+            XemTaiLieu();
         }
 
         private void btnNhapLai1_Click(object sender, EventArgs e)
         {
-
+            NhapLai(tabTaiLieu1);
         }
 
         private void dataTaiLieu1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int i = dataTaiLieu1.CurrentRow.Index;
+            txtMaTaiLieu1.Text = dataTaiLieu1.Rows[i].Cells[0].Value.ToString();
+            txtTenTaiLieu1.Text = dataTaiLieu1.Rows[i].Cells[1].Value.ToString();
+            txtMaTheLoai1.Text = dataTaiLieu1.Rows[i].Cells[2].Value.ToString();
+            txtSoLuong1.Text = dataTaiLieu1.Rows[i].Cells[3].Value.ToString();
+            txtNhaXuatBan1.Text = dataTaiLieu1.Rows[i].Cells[4].Value.ToString();
+            txtNamXuatBan1.Text = dataTaiLieu1.Rows[i].Cells[5].Value.ToString();
+            txtTacGia1.Text = dataTaiLieu1.Rows[i].Cells[6].Value.ToString();
         }
 
         #endregion
@@ -248,6 +278,7 @@ namespace Windows_Form_Project
                 {
                     docGiaDTO = new DocGiaDTO(txtMaDocGia2.Text, txtHoTen2.Text, gioiTinh, dtNgaySinh2.Text, cbDoiTuong2.Text, dtNgayCap2.Text, dtNgayHetHan2.Text);
                     docGiaBO.ThemDocGia(docGiaDTO);
+                    txtStatus.Text = "";
                 }
                 else
                 {
@@ -270,20 +301,21 @@ namespace Windows_Form_Project
             int result1 = DateTime.Compare(ngaySinh, ngayCap);
             int result2 = DateTime.Compare(ngayCap, ngayHetHan);
             bool gioiTinh = true;
+            if (rbGioiTinhNam2.Checked)
+            {
+                gioiTinh = true;
+            }
+            if (rbGioiTinhNu2.Checked)
+            {
+                gioiTinh = false;
+            }
             try
             {
-                if (rbGioiTinhNam2.Checked)
-                {
-                    gioiTinh = true;
-                }
-                if (rbGioiTinhNu2.Checked)
-                {
-                    gioiTinh = false;
-                }
                 if (result1 < 0 && result2 < 0)
                 {
                     docGiaDTO = new DocGiaDTO(txtMaDocGia2.Text, txtHoTen2.Text, gioiTinh, dtNgaySinh2.Text, cbDoiTuong2.Text, dtNgayCap2.Text, dtNgayHetHan2.Text);
                     docGiaBO.SuaDocGia(docGiaDTO);
+                    txtStatus.Text = "";
                 }
                 else
                 {
@@ -292,7 +324,7 @@ namespace Windows_Form_Project
             }
             catch
             {
-                txtStatus.Text = "Lỗi Sửa Độc Giả " + txtMaDocGia2.Text;
+                txtStatus.Text = "Lỗi lưu độc giả";
             }
             XemDocGia();
         }
@@ -338,6 +370,7 @@ namespace Windows_Form_Project
         #endregion
 
         #region Tab 3: Thể Loại
+
         private void XemTheLoai()
         {
             try
@@ -367,22 +400,44 @@ namespace Windows_Form_Project
 
         private void btnSuaTheLoai3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                TheLoaiDTO theLoaiDTO = new TheLoaiDTO(txtMaTheLoai3.Text, txtTenTheLoai3.Text, txtGhiChu3.Text);
+                theLoaiBO.SuaTheLoai(theLoaiDTO);
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = "Lỗi ghi thông tin !";
+            }
 
+            XemTheLoai();
         }
 
         private void btnXoaTheLoai3_Click(object sender, EventArgs e)
         {
+            try
+            {
+                theLoaiBO.XoaTheLoai(txtMaTheLoai3.Text);
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = "Lỗi ghi thông tin !";
+            }
 
+            XemTheLoai();
         }
 
         private void btnNhapLai3_Click(object sender, EventArgs e)
         {
-
+            NhapLai(tabTheLoai3);
         }
 
         private void dataTheLoai3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
+            int i = dataTheLoai3.CurrentRow.Index;
+            txtMaTheLoai3.Text = dataTheLoai3.Rows[i].Cells[0].Value.ToString();
+            txtTenTheLoai3.Text = dataTheLoai3.Rows[i].Cells[1].Value.ToString();
+            txtGhiChu3.Text = dataTheLoai3.Rows[i].Cells[2].Value.ToString();
         }
         #endregion
 
@@ -483,13 +538,19 @@ namespace Windows_Form_Project
             // Mở tab khi tab được chọn
             if (e.TabPage == tabNhanVien4)
             {
-                DataTable dataTable = nhanVienBO.XemNhanVien();
-                AutoComplete(txtMaNhanVien4, dataTable, "MaNhanVien");
                 XemNhanVien();
             }
             if (e.TabPage == tabDocGia2)
             {
                 XemDocGia();
+            }
+            if (e.TabPage == tabTaiLieu1)
+            {
+                XemTaiLieu();
+            }
+            if (e.TabPage == tabTheLoai3)
+            {
+                XemTheLoai();
             }
         }
 
@@ -499,6 +560,25 @@ namespace Windows_Form_Project
         #endregion
 
         #region Tab 6: Thống Kê
+        private void subTabThongKe6_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            if (e.TabPage == tabTaiLieuMuonQuaHan6)
+            {
+                this.reprotTaiLieuMuonQuaHan6.RefreshReport();
+            }
+            if (e.TabPage == tabTaiLieuDangMuon6)
+            {
+                this.reportTaiLieuDangMuon6.RefreshReport();
+            }
+            if (e.TabPage == tabTaiLieuMuonNhieuNhat6)
+            {
+                this.reportTop10MuonNhieu6.RefreshReport();
+            }
+            if (e.TabPage == tabMuonTheoTheLoai6)
+            {
+                this.reportMuonTheoTheLoai6.RefreshReport();
+            }
+        }
         #endregion
 
         #region Tab 7: Tìm Kiếm
@@ -517,7 +597,7 @@ namespace Windows_Form_Project
             {
                 tenCot = "TenTaiLieu";
             }
-            if (comboBoxText == "Tên Thể Loại")
+            if (comboBoxText == "Mã Thể Loại")
             {
                 tenCot = "MaTheLoai";
             }
@@ -551,57 +631,20 @@ namespace Windows_Form_Project
             return tuNoi;
         }
 
-        private void btnTimKiem8_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                DataTable dataTable = taiLieuBO.TimTaiLieu(TenCotTaiLieu(cbTimKiem8.Text), txtTimKiem8.Text);
-                dataTimKiem8.DataSource = dataTable;
-            }
-            catch
-            {
-                txtStatus.Text = "Lỗi Tìm Kiếm Tài Liệu";
-            }
-        }
-
         private void btnTimKiemNangCao8_Click(object sender, EventArgs e)
         {
+            string col1 = TenCotTaiLieu(cbTimKiemNangCao18.Text);
+            string col2 = TenCotTaiLieu(cbTimKiemNangCao28.Text);
+            string col3 = TenCotTaiLieu(cbTimKiemNangCao38.Text);
+            string link1 = TuNoi(cbTuyChonTimKiemNangCao18.Text);
+            string link2 = TuNoi(cbTuyChonTimKiemNangCao28.Text);
+            string info1 = txtTimKiemNangCao18.Text;
+            string info2 = txtTimKiemNangCao28.Text;
+            string info3 = txtTimKiemNangCao38.Text;
             try
             {
-                string col1 = TenCotTaiLieu(cbTimKiemNangCao18.Text);
-                string col2 = TenCotTaiLieu(cbTimKiemNangCao28.Text);
-                string col3 = TenCotTaiLieu(cbTimKiemNangCao38.Text);
-                string link1 = TuNoi(cbTuyChonTimKiemNangCao18.Text);
-                string link2 = TuNoi(cbTuyChonTimKiemNangCao28.Text);
-                string info1 = txtTimKiemNangCao18.Text;
-                string info2 = txtTimKiemNangCao28.Text;
-                string info3 = txtTimKiemNangCao38.Text;
-                //DataTable dataTable = taiLieuBO.TimTaiLieu(col1, info1, link1, col2, info2, link2, col3, info3);
-                DataTable dataTable1 = taiLieuBO.XemTaiLieu();
-                string subCommand1 = col1 + "='" + info1 + "'";
-                string subCommand2 = link1 + " " + col2 + "='" + info2 + "'";
-                string subCommand3 = link2 + " " + col3 + "='" + info3 + "'";
-                string command = subCommand1;
-                if (!String.IsNullOrWhiteSpace(col2) && !String.IsNullOrWhiteSpace(col3))
-                {
-                    command += " " + subCommand2 + " " + subCommand3;
-                }
-                if (String.IsNullOrWhiteSpace(col2) && !String.IsNullOrWhiteSpace(col3))
-                {
-                    command += " " + subCommand3;
-                }
-                if (!String.IsNullOrWhiteSpace(col2) && String.IsNullOrWhiteSpace(col3))
-                {
-                    command += " " + subCommand2;
-                }
-                DataRow[] dataRow = dataTable1.Select(command);
-                DataTable dataTable2 = taiLieuBO.XemTaiLieu();
-                dataTable2.Clear();
-                foreach (DataRow row in dataRow)
-                {
-                    dataTable2.Rows.Add(row.ItemArray);
-                }
-                dataTimKiem8.DataSource = dataTable2;
+                DataTable dataTable = taiLieuBO.TimTaiLieu(col1, info1, link1, col2, info2, link2, col3, info3);
+                dataTimKiem8.DataSource = dataTable;
                 txtStatus.Text = "";
             }
             catch (Exception ex)
@@ -609,11 +652,147 @@ namespace Windows_Form_Project
                 txtStatus.Text = "Lỗi Tìm Kiếm Tài Liệu";
             }
         }
+        private void cbTuyChonTimKiemNangCao18_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(cbTuyChonTimKiemNangCao18.Text))
+            {
+                txtTimKiemNangCao28.Enabled = false;
+                cbTimKiemNangCao28.Enabled = false;
+            }
+            else
+            {
+                txtTimKiemNangCao28.Enabled = true;
+                cbTimKiemNangCao28.Enabled = true;
+            }
+        }
 
+        private void cbTuyChonTimKiemNangCao28_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(cbTuyChonTimKiemNangCao28.Text))
+            {
+                txtTimKiemNangCao38.Enabled = false;
+                cbTimKiemNangCao38.Enabled = false;
+            }
+            else
+            {
+                txtTimKiemNangCao38.Enabled = true;
+                cbTimKiemNangCao38.Enabled = true;
+            }
+        }
         #endregion
 
         #region Tab 9: Phiếu Mượn
+
+        // Lọc tên cột tài liệu từ combobox để truy vấn
+        private string TenCotPhieuMuon(string comboBoxText)
+        {
+            string tenCot = "";
+            if (comboBoxText == "Mã Phiếu Mượn")
+            {
+                tenCot = "MaPhieuMuon";
+            }
+            if (comboBoxText == "Mã Độc Giả")
+            {
+                tenCot = "MaDocGia";
+            }
+            if (comboBoxText == "Mã Nhân Viên")
+            {
+                tenCot = "MaNhanVien";
+            }
+            if (comboBoxText == "Ngày Mượn")
+            {
+                tenCot = "NgayMuon";
+            }
+            return tenCot;
+        }
+
+        private void btnTimKiemNangCao9_Click(object sender, EventArgs e)
+        {
+            string col1 = TenCotPhieuMuon(cbTimKiemNangCao19.Text);
+            string col2 = TenCotPhieuMuon(cbTimKiemNangCao29.Text);
+            string col3 = TenCotPhieuMuon(cbTimKiemNangCao39.Text);
+            string link1 = TuNoi(cbTuyChonTimKiemNangCao19.Text);
+            string link2 = TuNoi(cbTuyChonTimKiemNangCao29.Text);
+            string info1 = txtTimKiemNangCao19.Text;
+            string info2 = txtTimKiemNangCao29.Text;
+            string info3 = txtTimKiemNangCao39.Text;
+            try
+            {
+                DataTable dataTable = phieuMuonBO.TimPhieuMuon(col1, info1, link1, col2, info2, link2, col3, info3);
+                dataTimKiem9.DataSource = dataTable;
+                txtStatus.Text = "";
+            }
+            catch (Exception ex)
+            {
+                txtStatus.Text = "Lỗi Tìm Kiếm Phiếu Mượn";
+            }
+        }
+
+        private void cbTuyChonTimKiemNangCao19_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(cbTuyChonTimKiemNangCao19.Text))
+            {
+                txtTimKiemNangCao29.Enabled = false;
+                cbTimKiemNangCao29.Enabled = false;
+            }
+            else
+            {
+                txtTimKiemNangCao29.Enabled = true;
+                cbTimKiemNangCao29.Enabled = true;
+            }
+        }
+
+        private void cbTuyChonTimKiemNangCao29_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            if (String.IsNullOrWhiteSpace(cbTuyChonTimKiemNangCao29.Text))
+            {
+                txtTimKiemNangCao39.Enabled = false;
+                cbTimKiemNangCao39.Enabled = false;
+            }
+            else
+            {
+                txtTimKiemNangCao39.Enabled = true;
+                cbTimKiemNangCao39.Enabled = true;
+            }
+        }
+
+        private void dataTimKiem9_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int index = dataTimKiem9.CurrentRow.Index;
+            string maPhieuMuon = dataTimKiem9.Rows[index].Cells[0].Value.ToString();
+            try
+            {
+                DataTable dataTable = phieuMuonChiTietBO.XemPhieuMuonChiTiet(maPhieuMuon);
+                dataTable.Columns.Remove("MaPhieuMuon");
+                dataPhieuMuonTaiLieu9.DataSource = dataTable;
+                txtStatus.Text = "";
+            }
+            catch
+            {
+                txtStatus.Text = "Lỗi lấy tài liệu trong phiếu mượn " + maPhieuMuon;
+            }
+        }
         #endregion
+
+        private void subTabTimKiem7_Selecting(object sender, TabControlCancelEventArgs e)
+        {
+            try
+            {
+                if (e.TabPage == tabTimKiemTaiLieu8)
+                {
+                    dataTimKiem8.DataSource = taiLieuBO.XemTaiLieu();
+                }
+                if (e.TabPage == tabTimKiemPhieuMuon9)
+                {
+                    dataTimKiem9.DataSource = phieuMuonBO.XemHet();
+                }
+                txtStatus.Text = "";
+            }
+            catch
+            {
+                txtStatus.Text = "Lỗi lấy thông tin";
+            }
+        }
 
         #endregion
 
@@ -644,32 +823,6 @@ namespace Windows_Form_Project
                 auto.Add(dataTable.Rows[i].Field<string>(tenCot));
             }
             textBox.AutoCompleteCustomSource = auto;
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            //txtStatus.Visible = false;
-            //timer.Stop();
-        }
-
-        private void subTabThongKe6_Selecting(object sender, TabControlCancelEventArgs e)
-        {
-            if(e.TabPage == tabTaiLieuMuonQuaHan6)
-            {
-                this.reprotTaiLieuMuonQuaHan6.RefreshReport();
-            }
-            if(e.TabPage == tabTaiLieuDangMuon6)
-            {
-                this.reportTaiLieuDangMuon6.RefreshReport();
-            }
-            if(e.TabPage == tabTaiLieuMuonNhieuNhat6)
-            {
-                this.reportTop10MuonNhieu6.RefreshReport();
-            }
-            if(e.TabPage == tabMuonTheoTheLoai6)
-            {
-                this.reportMuonTheoTheLoai6.RefreshReport();
-            }
         }
     }
 }

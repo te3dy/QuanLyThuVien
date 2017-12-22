@@ -12,12 +12,14 @@ namespace DAL
     /**
      * 
      */
-    public class TheLoaiDAO {
+    public class TheLoaiDAO
+    {
 
         /**
          * 
          */
-        public TheLoaiDAO() {
+        public TheLoaiDAO()
+        {
         }
 
         /**
@@ -31,7 +33,8 @@ namespace DAL
         /**
          * @return
          */
-        public DataTable XemTheLoai() {
+        public DataTable XemTheLoai()
+        {
             // TODO implement here
             try
             {
@@ -52,7 +55,8 @@ namespace DAL
         /**
          * @param theLoai
          */
-        public void ThemTheLoai(TheLoaiDTO theLoaiDto) {
+        public void ThemTheLoai(TheLoaiDTO theLoaiDto)
+        {
             // TODO implement here
             try
             {
@@ -74,22 +78,38 @@ namespace DAL
         /**
          * @param theLoai
          */
-        public void SuaTaiLieu(TheLoaiDTO theLoaiDto) {
-            // TODO implement here
+        public void SuaTaiLieu(TheLoaiDTO theLoaiDto)
+        {
+            try
+            {
+                connection.Open();
+                command = "UPDATE TheLoai SET TenTheLoai=@TenTheLoai, GhiChu=@GhiChu WHERE MaTheLoai=@MaTheLoai";
+                sqlCommand = new SqlCommand(command, connection.sqlConnection);
+                sqlCommand.Parameters.AddWithValue("MaTheLoai", theLoaiDto.MaTheLoai);
+                sqlCommand.Parameters.AddWithValue("TenTheLoai", theLoaiDto.TenTheLoai);
+                sqlCommand.Parameters.AddWithValue("GhiChu", theLoaiDto.GhiChu);
+                sqlCommand.ExecuteNonQuery();
+                connection.Close();
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
 
         }
 
         /**
          * 
          */
-        public void XoaTaiLieu(string maTheLoai) {
+        public void XoaTaiLieu(string maTheLoai)
+        {
             // TODO implement here
             try
             {
                 connection.Open();
                 command = "DELETE FROM TheLoai WHERE MaTheLoai=@MaTheLoai";
                 sqlCommand = new SqlCommand(command, connection.sqlConnection);
-                sqlCommand.Parameters.AddWithValue("MaTheLoai",maTheLoai);
+                sqlCommand.Parameters.AddWithValue("MaTheLoai", maTheLoai);
                 sqlCommand.ExecuteNonQuery();
                 connection.Close();
             }
@@ -102,7 +122,8 @@ namespace DAL
         /**
          * @return
          */
-        public DataTable TimTaiLieu() {
+        public DataTable TimTaiLieu()
+        {
             // TODO implement here
             return null;
         }
