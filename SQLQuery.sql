@@ -50,7 +50,7 @@ CREATE TABLE PhieuMuon
   FOREIGN KEY(MaNhanVien) REFERENCES dbo.NhanVien(MaNhanVien)
 )
 GO
-CREATE TABLE PhieuMuonChiTieu
+CREATE TABLE PhieuMuonChiTiet
 (
   MaPhieuMuon CHAR(10),
   MaTaiLieu CHAR(10),
